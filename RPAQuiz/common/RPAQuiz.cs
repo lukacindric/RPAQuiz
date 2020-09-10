@@ -17,7 +17,8 @@ namespace RPAQuiz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SignInScreen());
+            System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en");
+            Application.Run(new SignIn("en"));
         }
     }
 }

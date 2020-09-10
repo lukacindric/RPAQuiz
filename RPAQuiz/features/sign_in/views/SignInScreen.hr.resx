@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Sign_In_Screen_Title" xml:space="preserve">
-    <value>Bok</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
+  <data name="BtnSignIn.Text" xml:space="preserve">
+    <value>Prijavi se</value>
+  </data>
+  <data name="LblPassword.Text" xml:space="preserve">
+    <value>Lozinka:</value>
+  </data>
+  <data name="LblTitle.Text" xml:space="preserve">
+    <value>Dobrodošli u RPA kviz!</value>
+  </data>
+  <data name="LblUsername.Text" xml:space="preserve">
+    <value>Korisničko ime (AAI):</value>
   </data>
 </root>
