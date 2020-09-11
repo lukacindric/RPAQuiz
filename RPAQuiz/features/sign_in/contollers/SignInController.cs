@@ -1,7 +1,10 @@
 ﻿using RPAQuiz.common;
+using RPAQuiz.common.constants;
+using RPAQuiz.data.models;
+using RPAQuiz.data.repositories;
 using RPAQuiz.features.sign_in.views;
 using System;
-using System.Data.SqlClient;
+using System.Resources;
 
 namespace RPAQuiz.features.sign_in.contollers
 {
@@ -9,37 +12,37 @@ namespace RPAQuiz.features.sign_in.contollers
     {
         private readonly SignIn View;
 
+        private readonly ResourceManager resourceManager = new ResourceManager(typeof(SignIn));
+
         public SignInController(SignIn view): base(view)
         {
             this.View = view;
         }
 
-        public void onSignInButtonClicked(String username, String password)
+        public void OnSignInButtonClicked(String username, String password)
         {
-            var con = new SqlConnection();
-            con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\data\\database\\RPADatabase.mdf;Integrated Security=True";
-            con.Open();
-            SqlCommand getUsersCommand = new SqlCommand("SELECT * FROM USERS", con);
-            using (SqlDataReader reader = getUsersCommand.ExecuteReader())
+            if(username.Length == 0 || password.Length == 0)
             {
-                // Check is the reader has any rows at all before starting to read.
-                if (reader.HasRows)
-                {
-                    // Read advances to the next row.
-                    while (reader.Read())
-                    {
-                        String DbUsername = reader.GetString(reader.GetOrdinal("Username"));
-                        Console.Out.WriteLine(DbUsername);
-
-                    }
-                }
-                Console.Out.WriteLine("bla");
+                View.ShowMessage(resourceManager.GetString(StringKeys.SignInScreenEmptyFieldsKey));
+                return;
             }
+            User user = UserRepository.Instance.GetUserWithUserName(username);
+            if (user == null)
+            {
+                View.ShowMessage(resourceManager.GetString(StringKeys.SignInScreenNoUsernameKey));
+            } else if (password != user.Password)
+            {
+                View.ShowMessage(resourceManager.GetString(StringKeys.SignInScreenWrongPasswordKey));
+            } else
+            {
+                ShowMainScreen(user);
+            }
+      
         }
 
-        public void onSelectedLanguageChanged(String initiallySelectedLanguage, object selectedLanguage)
+        public void OnSelectedLanguageChanged(String initiallySelectedLanguage, object selectedLanguage)
         {
-            String languageCode = "";
+            string languageCode;
             switch (selectedLanguage)
             {
                 case "EN":
@@ -53,14 +56,19 @@ namespace RPAQuiz.features.sign_in.contollers
             }
             if (languageCode == initiallySelectedLanguage) return;
             System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo(languageCode);
-            restartSignInForm(languageCode);
+            RestartSignInForm(languageCode);
         }
 
-        private void restartSignInForm(string languageCode)
+        private void RestartSignInForm(string languageCode)
         {
             SignIn form = new SignIn(languageCode);
             form.Show();
             View.Hide();
+        }
+
+        private void ShowMainScreen(User user)
+        {
+
         }
     }
 }

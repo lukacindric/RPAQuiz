@@ -9,6 +9,8 @@ namespace RPAQuiz
 {
     static class RPAQuiz
     {
+
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,6 +21,11 @@ namespace RPAQuiz
             Application.SetCompatibleTextRenderingDefault(false);
             System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en");
             Application.Run(new SignIn("en"));
+        }
+
+       public static String getMe()
+        {
+            return "booooook";
         }
     }
 }

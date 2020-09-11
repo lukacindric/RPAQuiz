@@ -324,6 +324,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>582, 345</value>
   </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>SignInScreen</value>
   </data>

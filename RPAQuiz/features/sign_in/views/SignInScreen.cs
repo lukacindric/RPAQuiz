@@ -17,14 +17,15 @@ namespace RPAQuiz.features.sign_in.views
 {
     public partial class SignIn : BaseForm
     {
-        private String initallySelectedLanguage;
+        private readonly string initallySelectedLanguage;
         public override BaseController Controller
         {
             get { return new SignInController(this); }
         }
 
-        private SignInController controller;
+        private readonly SignInController controller;
 
+        //constructor
         public SignIn(String selectedLanguage)
         {
             InitializeComponent();
@@ -34,12 +35,19 @@ namespace RPAQuiz.features.sign_in.views
             SetupUI();
         }
 
+        //parent methods
+
+        public override void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
+
         //UI setup
         private void SetupUI()
         {
             SetupFormSettings();
             SetupLanguageComboBox();
-           
+     
         }
 
         private void SetupFormSettings()
@@ -49,7 +57,6 @@ namespace RPAQuiz.features.sign_in.views
             this.MinimizeBox = false;
         }
 
-        public void Bla() { }
 
         private void SetupLanguageComboBox()
         {
@@ -70,9 +77,10 @@ namespace RPAQuiz.features.sign_in.views
            
         }
 
+        // user actions
         private void BtnSignIn_Click(object sender, EventArgs e)
         {
-            controller.onSignInButtonClicked(TxtUsername.Text, TxtPassword.Text);
+            controller.OnSignInButtonClicked(TxtUsername.Text, TxtPassword.Text);
         }
 
         private void TxtPassword_KeyDown(object sender, KeyEventArgs e)
@@ -89,7 +97,7 @@ namespace RPAQuiz.features.sign_in.views
 
         private void CboLanguage_DropDownClosed(object sender, EventArgs e)
         {
-            controller.onSelectedLanguageChanged(initallySelectedLanguage, CboLanguage.SelectedItem);
+            controller.OnSelectedLanguageChanged(initallySelectedLanguage, CboLanguage.SelectedItem);
         }
     }
 }

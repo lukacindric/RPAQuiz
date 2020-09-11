@@ -123,6 +123,9 @@
   <data name="BtnSignIn.Text" xml:space="preserve">
     <value>Sign in</value>
   </data>
+  <data name="EmptyFieldsMessage" xml:space="preserve">
+    <value>Fields Username and Password can not be blank!</value>
+  </data>
   <data name="LblPassword.Text" xml:space="preserve">
     <value>Password:</value>
   </data>
@@ -131,5 +134,11 @@
   </data>
   <data name="LblUsername.Text" xml:space="preserve">
     <value>Username (AAI):</value>
+  </data>
+  <data name="NoUserWIthThisUsernameMessage" xml:space="preserve">
+    <value>User with this username does not exist.</value>
+  </data>
+  <data name="WrongPasswordMessage" xml:space="preserve">
+    <value>Entered password is incorrect!</value>
   </data>
 </root>

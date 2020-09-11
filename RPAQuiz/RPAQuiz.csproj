@@ -65,7 +65,12 @@
     <Compile Include="common\base\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="common\constants\SQLParameters.cs" />
+    <Compile Include="common\constants\SQLQueries.cs" />
+    <Compile Include="common\constants\StringKeys.cs" />
     <Compile Include="common\RPAQuiz.cs" />
+    <Compile Include="data\models\User.cs" />
+    <Compile Include="data\repositories\UserRepository.cs" />
     <Compile Include="features\sign_in\contollers\SignInController.cs" />
     <Compile Include="features\sign_in\views\SignInScreen.cs">
       <SubType>Form</SubType>
@@ -135,11 +140,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="common\constants\" />
-    <Folder Include="data\models\" />
-    <Folder Include="data\repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="data\database\RPADatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

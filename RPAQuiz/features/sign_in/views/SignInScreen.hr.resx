@@ -123,6 +123,9 @@
   <data name="BtnSignIn.Text" xml:space="preserve">
     <value>Prijavi se</value>
   </data>
+  <data name="EmptyFieldsMessage" xml:space="preserve">
+    <value>Polja Korisničko ime i Lozinka su obavezna!</value>
+  </data>
   <data name="LblPassword.Text" xml:space="preserve">
     <value>Lozinka:</value>
   </data>
@@ -131,5 +134,11 @@
   </data>
   <data name="LblUsername.Text" xml:space="preserve">
     <value>Korisničko ime (AAI):</value>
+  </data>
+  <data name="NoUserWIthThisUsernameMessage" xml:space="preserve">
+    <value>Korisnik s unesenim korisničkim imenom ne postoji.</value>
+  </data>
+  <data name="WrongPasswordMessage" xml:space="preserve">
+    <value>Unijeli ste neispravnu lozinku!</value>
   </data>
 </root>
