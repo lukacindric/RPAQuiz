@@ -1,7 +1,7 @@
 ﻿using RPAQuiz.common;
 using RPAQuiz.features.sign_in.views;
 using System;
-
+using System.Data.SqlClient;
 
 namespace RPAQuiz.features.sign_in.contollers
 {
@@ -16,7 +16,25 @@ namespace RPAQuiz.features.sign_in.contollers
 
         public void onSignInButtonClicked(String username, String password)
         {
+            var con = new SqlConnection();
+            con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\data\\database\\RPADatabase.mdf;Integrated Security=True";
+            con.Open();
+            SqlCommand getUsersCommand = new SqlCommand("SELECT * FROM USERS", con);
+            using (SqlDataReader reader = getUsersCommand.ExecuteReader())
+            {
+                // Check is the reader has any rows at all before starting to read.
+                if (reader.HasRows)
+                {
+                    // Read advances to the next row.
+                    while (reader.Read())
+                    {
+                        String DbUsername = reader.GetString(reader.GetOrdinal("Username"));
+                        Console.Out.WriteLine(DbUsername);
 
+                    }
+                }
+                Console.Out.WriteLine("bla");
+            }
         }
 
         public void onSelectedLanguageChanged(String initiallySelectedLanguage, object selectedLanguage)

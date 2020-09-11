@@ -72,7 +72,7 @@ namespace RPAQuiz.features.sign_in.views
 
         private void BtnSignIn_Click(object sender, EventArgs e)
         {
-            Console.Out.WriteLine("btn tappppp");
+            controller.onSignInButtonClicked(TxtUsername.Text, TxtPassword.Text);
         }
 
         private void TxtPassword_KeyDown(object sender, KeyEventArgs e)
