@@ -34,11 +34,12 @@ namespace RPAQuiz.data.repositories
                 {
                     while (reader.Read())
                     {
+                        int DbId = reader.GetInt32(reader.GetOrdinal("Id"));
                         String DbUsername = reader.GetString(reader.GetOrdinal("Username"));
                         String DbPassword= reader.GetString(reader.GetOrdinal("Password"));
                         bool DbIsStudent = reader.GetBoolean(reader.GetOrdinal("IsStudent"));
                         Connection.Close();
-                        return new User(DbUsername, DbPassword, DbIsStudent);
+                        return new User(DbId, DbUsername, DbPassword, DbIsStudent);
 
                     }
                 }

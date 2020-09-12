@@ -1,5 +1,6 @@
 ﻿using RPAQuiz.common.constants;
 using RPAQuiz.features.sign_in.views;
+using RPAQuiz.features.student_quizes_overview.views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,8 @@ namespace RPAQuiz
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SetLanguage(LanguageCodes.Croatian);
-            Application.Run(new SignIn(LanguageCodes.Croatian));
+            //Application.Run(new SignIn(LanguageCodes.Croatian));
+            Application.Run(new StudentQuizesOverviewScreen());
         }
 
        public static void SetLanguage(string languageCode)

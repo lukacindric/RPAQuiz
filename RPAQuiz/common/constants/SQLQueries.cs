@@ -8,6 +8,7 @@ namespace RPAQuiz.common.constants
 {
     class SQLQueries
     {
-        public const string GetUserWithUsernameQuery = "SELECT * FROM USERS WHERE Username =" + SQLParameters.Username +";"; 
+        public const string GetUserWithUsernameQuery = "SELECT * FROM USERS WHERE Username =" + SQLParameters.Username +";";
+        public const string GetQuizesQuery = "SELECT * FROM QUIZES;";
     }
 }

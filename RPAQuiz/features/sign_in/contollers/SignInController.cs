@@ -3,6 +3,7 @@ using RPAQuiz.common.constants;
 using RPAQuiz.data.models;
 using RPAQuiz.data.repositories;
 using RPAQuiz.features.sign_in.views;
+using RPAQuiz.features.student_quizes_overview.views;
 using System;
 using System.Resources;
 
@@ -68,7 +69,9 @@ namespace RPAQuiz.features.sign_in.contollers
 
         private void ShowMainScreen(User user)
         {
-
+            StudentQuizesOverviewScreen form = new StudentQuizesOverviewScreen();
+            form.Show();
+            View.Hide();
         }
     }
 }
