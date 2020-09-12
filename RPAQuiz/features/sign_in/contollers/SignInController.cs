@@ -45,17 +45,17 @@ namespace RPAQuiz.features.sign_in.contollers
             string languageCode;
             switch (selectedLanguage)
             {
-                case "EN":
-                    languageCode = "en";
+                case LanguageCodes.English:
+                    languageCode = LanguageCodes.English;
                     break;
-                case "HR":
-                    languageCode = "hr";
+                case LanguageCodes.Croatian:
+                    languageCode = LanguageCodes.Croatian;
                     break;
                 default:
                     return;
             }
             if (languageCode == initiallySelectedLanguage) return;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo(languageCode);
+            RPAQuiz.SetLanguage(languageCode);
             RestartSignInForm(languageCode);
         }
 

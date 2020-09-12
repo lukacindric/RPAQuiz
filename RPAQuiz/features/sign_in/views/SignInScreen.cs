@@ -1,16 +1,7 @@
 ﻿using RPAQuiz.common;
+using RPAQuiz.common.constants;
 using RPAQuiz.features.sign_in.contollers;
-using RPAQuiz.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RPAQuiz.features.sign_in.views
@@ -62,16 +53,16 @@ namespace RPAQuiz.features.sign_in.views
         {
             switch (initallySelectedLanguage)
             {
-                case "en":
-                    CboLanguage.Text = "EN";
+                case LanguageCodes.English:
+                    CboLanguage.Text = LanguageCodes.English;
                     break;
 
-                case "hr":
-                    CboLanguage.Text = "HR";
+                case LanguageCodes.Croatian:
+                    CboLanguage.Text = LanguageCodes.Croatian;
                     break;
 
                 default:
-                    CboLanguage.Text = "EN";
+                    CboLanguage.Text = LanguageCodes.Croatian;
                     break;
             }
            

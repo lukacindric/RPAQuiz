@@ -65,6 +65,7 @@
     <Compile Include="common\base\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="common\constants\LanguageCodes.cs" />
     <Compile Include="common\constants\SQLParameters.cs" />
     <Compile Include="common\constants\SQLQueries.cs" />
     <Compile Include="common\constants\StringKeys.cs" />

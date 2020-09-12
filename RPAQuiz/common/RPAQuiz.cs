@@ -1,4 +1,5 @@
-﻿using RPAQuiz.features.sign_in.views;
+﻿using RPAQuiz.common.constants;
+using RPAQuiz.features.sign_in.views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,13 +20,13 @@ namespace RPAQuiz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo("en");
-            Application.Run(new SignIn("en"));
+            SetLanguage(LanguageCodes.Croatian);
+            Application.Run(new SignIn(LanguageCodes.Croatian));
         }
 
-       public static String getMe()
+       public static void SetLanguage(string languageCode)
         {
-            return "booooook";
+            System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo(languageCode);
         }
     }
 }

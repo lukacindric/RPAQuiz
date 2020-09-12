@@ -286,10 +286,10 @@
     <value>1</value>
   </data>
   <data name="CboLanguage.Items" xml:space="preserve">
-    <value>EN</value>
+    <value>HR</value>
   </data>
   <data name="CboLanguage.Items1" xml:space="preserve">
-    <value>HR</value>
+    <value>EN</value>
   </data>
   <data name="CboLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>512, 13</value>
@@ -301,7 +301,7 @@
     <value>6</value>
   </data>
   <data name="CboLanguage.Text" xml:space="preserve">
-    <value>EN</value>
+    <value>HR</value>
   </data>
   <data name="&gt;&gt;CboLanguage.Name" xml:space="preserve">
     <value>CboLanguage</value>
