@@ -1,5 +1,7 @@
-﻿using RPAQuiz.data.models;
+﻿using RPAQuiz.common;
+using RPAQuiz.data.models;
 using RPAQuiz.data.repositories;
+using RPAQuiz.features.student_quizes_overview.controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,33 +15,33 @@ using System.Windows.Forms;
 
 namespace RPAQuiz.features.student_quizes_overview.views
 {
-    public partial class StudentQuizesOverviewScreen : Form
+    public partial class StudentQuizesOverviewScreen : BaseForm
     {
+
+        public override BaseController Controller
+        {
+            get { return new StudentQuizesOverviewController(this); }
+        }
+
+        private readonly StudentQuizesOverviewController controller;
+
         public StudentQuizesOverviewScreen()
         {
             InitializeComponent();
-            string[] columnHeaders = new string[] { "Naziv kviza" };
-            var dt = SetColumnsHeaderName(columnHeaders);
-            var quizes = QuizRepository.Instance.GetQuizes();
-            quizes.ForEach (quiz =>
-                dt.Rows.Add(new object[] {quiz.Name})
-            );
-            QuizesDataGridView.DataSource = dt;
+            this.controller = Controller as StudentQuizesOverviewController;
+            controller.OnCreate();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void UpdateDataGridViewSource(DataTable dataTable)
         {
-            
+            QuizesDataGridView.DataSource = null;
+            QuizesDataGridView.DataSource = dataTable;
         }
+        
 
-        public DataTable SetColumnsHeaderName(string[] TagName)
+        public override void ShowMessage(string message)
         {
-            DataTable dt = new DataTable();
-            foreach (var item in TagName)
-            {
-                dt.Columns.Add(item);
-            }
-            return dt;
+            MessageBox.Show(message);
         }
     }
 }

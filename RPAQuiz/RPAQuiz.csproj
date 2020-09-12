@@ -82,6 +82,7 @@
     <Compile Include="features\sign_in\views\SignInScreen.Designer.cs">
       <DependentUpon>SignInScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="features\student_quizes_overview\controllers\StudentQuizesOverviewController.cs" />
     <Compile Include="features\student_quizes_overview\views\StudentQuizesOverviewScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +103,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="features\sign_in\views\SignInScreen.resx">
       <DependentUpon>SignInScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\student_quizes_overview\views\StudentQuizesOverviewScreen.en.resx">
+      <DependentUpon>StudentQuizesOverviewScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\student_quizes_overview\views\StudentQuizesOverviewScreen.hr.resx">
+      <DependentUpon>StudentQuizesOverviewScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="features\student_quizes_overview\views\StudentQuizesOverviewScreen.resx">
       <DependentUpon>StudentQuizesOverviewScreen.cs</DependentUpon>
@@ -153,9 +160,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="features\student_quizes_overview\controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="data\database\RPADatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
