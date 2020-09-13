@@ -50,9 +50,9 @@ namespace RPAQuiz.features.student_quizes_overview.controllers
 
         public void OnUserClickedViewQuizResultsButton(int quizId)
         {
-           if (viewModels.Any(vM=> vM.QuizId == quizId )){
+           if (viewModels.Any(vM=> vM.QuizId == quizId)){
                 View.Hide();
-                var form = new StudentQuizResultScreen();
+                var form = new StudentQuizResultScreen(1,quizId, viewModels.Where(vM => vM.QuizId == quizId).ToList()[0].QuizName);
                 form.Show();
             } else
             {

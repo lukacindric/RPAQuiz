@@ -49,6 +49,7 @@
             resources.ApplyResources(this.BtnPreviousQuestion, "BtnPreviousQuestion");
             this.BtnPreviousQuestion.Name = "BtnPreviousQuestion";
             this.BtnPreviousQuestion.UseVisualStyleBackColor = true;
+            this.BtnPreviousQuestion.Click += new System.EventHandler(this.BtnPreviousQuestion_Click);
             // 
             // LblQuestionNumber
             // 
@@ -60,9 +61,11 @@
             resources.ApplyResources(this.BtnNextQuestion, "BtnNextQuestion");
             this.BtnNextQuestion.Name = "BtnNextQuestion";
             this.BtnNextQuestion.UseVisualStyleBackColor = true;
+            this.BtnNextQuestion.Click += new System.EventHandler(this.BtnNextQuestion_Click);
             // 
             // RbFirstAnswer
             // 
+            this.RbFirstAnswer.AutoCheck = false;
             resources.ApplyResources(this.RbFirstAnswer, "RbFirstAnswer");
             this.RbFirstAnswer.Name = "RbFirstAnswer";
             this.RbFirstAnswer.TabStop = true;
@@ -70,6 +73,7 @@
             // 
             // RbSecondAnswer
             // 
+            this.RbSecondAnswer.AutoCheck = false;
             resources.ApplyResources(this.RbSecondAnswer, "RbSecondAnswer");
             this.RbSecondAnswer.Name = "RbSecondAnswer";
             this.RbSecondAnswer.TabStop = true;
@@ -77,6 +81,7 @@
             // 
             // RbThirdAnswer
             // 
+            this.RbThirdAnswer.AutoCheck = false;
             resources.ApplyResources(this.RbThirdAnswer, "RbThirdAnswer");
             this.RbThirdAnswer.Name = "RbThirdAnswer";
             this.RbThirdAnswer.TabStop = true;
@@ -84,6 +89,7 @@
             // 
             // RbFourthAnswer
             // 
+            this.RbFourthAnswer.AutoCheck = false;
             resources.ApplyResources(this.RbFourthAnswer, "RbFourthAnswer");
             this.RbFourthAnswer.Name = "RbFourthAnswer";
             this.RbFourthAnswer.TabStop = true;

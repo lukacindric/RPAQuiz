@@ -96,6 +96,7 @@
       <DependentUpon>StudentQuizesOverviewScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="features\student_quizes_overview\view_models\StudentQuizesOverviewTableViewModel.cs" />
+    <Compile Include="features\student_quiz_result\controllers\StudentQuizResultController.cs" />
     <Compile Include="features\student_quiz_result\viewmodels\StudentQuizResultViewmodel.cs" />
     <Compile Include="features\student_quiz_result\views\StudentQuizResultScreen.cs">
       <SubType>Form</SubType>
@@ -126,6 +127,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="features\student_quizes_overview\views\StudentQuizesOverviewScreen.resx">
       <DependentUpon>StudentQuizesOverviewScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\student_quiz_result\views\StudentQuizResultScreen.en.resx">
+      <DependentUpon>StudentQuizResultScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\student_quiz_result\views\StudentQuizResultScreen.hr.resx">
+      <DependentUpon>StudentQuizResultScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="features\student_quiz_result\views\StudentQuizResultScreen.resx">
       <DependentUpon>StudentQuizResultScreen.cs</DependentUpon>
@@ -177,9 +184,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="features\student_quiz_result\controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="data\database\RPADatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

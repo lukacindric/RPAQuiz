@@ -156,7 +156,7 @@
     <value>1</value>
   </data>
   <data name="BtnPreviousQuestion.Text" xml:space="preserve">
-    <value>button1</value>
+    <value>Prethodno</value>
   </data>
   <data name="&gt;&gt;BtnPreviousQuestion.Name" xml:space="preserve">
     <value>BtnPreviousQuestion</value>
