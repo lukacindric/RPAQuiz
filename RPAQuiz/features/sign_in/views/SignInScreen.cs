@@ -17,7 +17,7 @@ namespace RPAQuiz.features.sign_in.views
         private readonly SignInController controller;
 
         //constructor
-        public SignIn(String selectedLanguage)
+        public SignIn(String selectedLanguage): base()
         {
             InitializeComponent();
             this.initallySelectedLanguage = selectedLanguage;
@@ -36,18 +36,8 @@ namespace RPAQuiz.features.sign_in.views
         //UI setup
         private void SetupUI()
         {
-            SetupFormSettings();
             SetupLanguageComboBox();
-     
         }
-
-        private void SetupFormSettings()
-        {
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-        }
-
 
         private void SetupLanguageComboBox()
         {

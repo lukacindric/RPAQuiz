@@ -9,5 +9,6 @@ namespace RPAQuiz.common.constants
     class SQLParameters
     {
         public const string Username = "@USERNAME";
+        public const string UserId = "@USER_ID";
     }
 }

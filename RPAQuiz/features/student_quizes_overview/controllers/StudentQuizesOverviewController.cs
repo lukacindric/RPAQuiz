@@ -1,4 +1,5 @@
 ﻿using RPAQuiz.common;
+using RPAQuiz.common.constants;
 using RPAQuiz.data.repositories;
 using RPAQuiz.features.student_quizes_overview.views;
 using System;
@@ -24,21 +25,24 @@ namespace RPAQuiz.features.student_quizes_overview.controllers
 
         public void OnCreate()
         {
-            string[] columnHeaders = new string[] { "Naziv kviza" };
+            string[] columnHeaders = new string[] { resourceManager.GetString(StringKeys.StudentQuizesOverviewTableHeaderQuizName),
+            resourceManager.GetString(StringKeys.StudentQUizesOverviewTableHeaderMyResult)};
             var dataTable = SetColumnsHeaderName(columnHeaders);
             var quizes = QuizRepository.Instance.GetQuizes();
             quizes.ForEach(quiz =>
-               dataTable.Rows.Add(new object[] { quiz.Name })
+               dataTable.Rows.Add(new object[] { quiz.Name, "Bla" })
             );
 
             View.UpdateDataGridViewSource(dataTable);
+
+            QuizRepository.Instance.GetBla();
         }
 
 
-        public DataTable SetColumnsHeaderName(string[] TagName)
+        public DataTable SetColumnsHeaderName(string[] ColumnNames)
         {
             DataTable dt = new DataTable();
-            foreach (var item in TagName)
+            foreach (var item in ColumnNames)
             {
                 dt.Columns.Add(item);
             }

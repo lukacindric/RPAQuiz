@@ -25,7 +25,7 @@ namespace RPAQuiz.features.student_quizes_overview.views
 
         private readonly StudentQuizesOverviewController controller;
 
-        public StudentQuizesOverviewScreen()
+        public StudentQuizesOverviewScreen(): base()
         {
             InitializeComponent();
             this.controller = Controller as StudentQuizesOverviewController;

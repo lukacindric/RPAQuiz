@@ -20,6 +20,19 @@ namespace RPAQuiz.common
         }
 
         public abstract void ShowMessage(string message);
+
+        public BaseForm()
+        {
+            SetupFormSettings();
+        }
+
+        private void SetupFormSettings()
+        {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+        }
+
     }
 
     // This class is needed for Visual Studio to generate Design preview to show forms that inherit from BaseForm class. If desginer still fails, restart Visual Studio

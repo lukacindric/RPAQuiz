@@ -33,8 +33,8 @@ namespace RPAQuiz.data.repositories
                 {
                     while (reader.Read())
                     {
-                        int DbId = reader.GetInt32(reader.GetOrdinal("Id"));
-                        String DbName = reader.GetString(reader.GetOrdinal("Name"));
+                        int DbId = reader.GetInt32(reader.GetOrdinal(SQLColumns.Id));
+                        String DbName = reader.GetString(reader.GetOrdinal(SQLColumns.Name));
                         quizes.Add(new Quiz(DbId, DbName));
 
                     }
@@ -42,6 +42,28 @@ namespace RPAQuiz.data.repositories
             }
             Connection.Close();
             return quizes;
+        }
+
+        public void  GetBla()
+        {
+            var quizes = new List<Quiz>();
+            Connection.Open();
+            SqlCommand command = new SqlCommand(SQLQueries.GetUserAnswers, Connection);
+            command.Parameters.Add(SQLParameters.UserId, System.Data.SqlDbType.Int);
+            command.Parameters[SQLParameters.UserId].Value = 1;
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        bool DbIsCorrectAnswer = reader.GetBoolean(reader.GetOrdinal(SQLColumns.IsCorrectAnswer));
+                        String DbName = reader.GetString(reader.GetOrdinal(SQLColumns.Name));
+                        Console.Out.WriteLine(DbName + " " + DbIsCorrectAnswer);
+                    }
+                }
+            }
+            Connection.Close();
         }
     }
 }

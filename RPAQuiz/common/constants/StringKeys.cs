@@ -8,10 +8,14 @@ namespace RPAQuiz.common.constants
 {
     class StringKeys
     {
-        // SignIn scren
+        // SignIn screen
         public const string SignInScreenEmptyFieldsKey = "EmptyFieldsMessage";
         public const string SignInScreenNoUsernameKey = "NoUserWIthThisUsernameMessage";
         public const string SignInScreenWrongPasswordKey = "WrongPasswordMessage";
+
+        //StudentQuizesOverview screen
+        public const string StudentQuizesOverviewTableHeaderQuizName = "TableQuizNameColumnHeader";
+        public const string StudentQUizesOverviewTableHeaderMyResult = "TableMyResultColumnHeader";
 
     }
 }
