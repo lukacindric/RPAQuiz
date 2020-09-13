@@ -12,7 +12,12 @@ namespace RPAQuiz.features.student_quizes_overview.view_models
         private string quizName;
         private string userResult;
 
-        public StudentQuizesOverviewTableViewModel() { }
+        public StudentQuizesOverviewTableViewModel(int quizId, string quizName, string userResult)
+        {
+            this.quizId = quizId;
+            this.quizName = quizName;
+            this.userResult = userResult;
+        }
 
         public int QuizId { get => quizId; set => quizId = value; }
         public string QuizName { get => quizName; set => quizName = value; }

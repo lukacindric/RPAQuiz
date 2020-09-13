@@ -60,6 +60,7 @@
             resources.ApplyResources(this.BtnViewResults, "BtnViewResults");
             this.BtnViewResults.Name = "BtnViewResults";
             this.BtnViewResults.UseVisualStyleBackColor = true;
+            this.BtnViewResults.Click += new System.EventHandler(this.BtnViewResults_Click);
             // 
             // StudentQuizesOverviewScreen
             // 

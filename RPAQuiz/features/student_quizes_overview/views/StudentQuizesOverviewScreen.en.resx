@@ -132,4 +132,10 @@
   <data name="TableQuizNameColumnHeader" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="TableUserDidNotTakeTheQuiz" xml:space="preserve">
+    <value>No result</value>
+  </data>
+  <data name="UserDidNotTakeTheQuizMessage" xml:space="preserve">
+    <value>There are no results for the selected quiz!</value>
+  </data>
 </root>

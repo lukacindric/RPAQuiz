@@ -29,6 +29,7 @@ namespace RPAQuiz.features.student_quizes_overview.views
         {
             InitializeComponent();
             this.controller = Controller as StudentQuizesOverviewController;
+            SetupUI();
             controller.OnCreate();
         }
 
@@ -36,12 +37,32 @@ namespace RPAQuiz.features.student_quizes_overview.views
         {
             QuizesDataGridView.DataSource = null;
             QuizesDataGridView.DataSource = dataTable;
+            QuizesDataGridView.Columns[2].Visible = false;
         }
         
 
         public override void ShowMessage(string message)
         {
             MessageBox.Show(message);
+        }
+
+        //UI
+        private void SetupUI()
+        {
+            SetupQuizesDataGridView();
+        }
+
+        private void SetupQuizesDataGridView()
+        {
+            QuizesDataGridView.MultiSelect = false;
+        }
+
+        //user actions
+        private void BtnViewResults_Click(object sender, EventArgs e)
+        {
+            var selectedRow = QuizesDataGridView.SelectedCells[0].OwningRow;
+            string quizId = (string) selectedRow.Cells[2].Value;
+            controller.OnUserClickedViewQuizResultsButton(Int32.Parse(quizId));
         }
     }
 }

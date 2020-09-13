@@ -121,7 +121,7 @@
     <value>RPA Kviz</value>
   </data>
   <data name="BtnTakeQuiz.Text" xml:space="preserve">
-    <value>RIješi kviz</value>
+    <value>Riješi kviz</value>
   </data>
   <data name="BtnViewResults.Text" xml:space="preserve">
     <value>Pogledaj rezultat</value>
@@ -131,5 +131,11 @@
   </data>
   <data name="TableQuizNameColumnHeader" xml:space="preserve">
     <value>Naziv</value>
+  </data>
+  <data name="TableUserDidNotTakeTheQuiz" xml:space="preserve">
+    <value>Niste pristupili</value>
+  </data>
+  <data name="UserDidNotTakeTheQuizMessage" xml:space="preserve">
+    <value>Nema rezultata za odabrani kviz!</value>
   </data>
 </root>

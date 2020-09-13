@@ -14,8 +14,10 @@ namespace RPAQuiz.common.constants
         public const string SignInScreenWrongPasswordKey = "WrongPasswordMessage";
 
         //StudentQuizesOverview screen
-        public const string StudentQuizesOverviewTableHeaderQuizName = "TableQuizNameColumnHeader";
-        public const string StudentQUizesOverviewTableHeaderMyResult = "TableMyResultColumnHeader";
+        public const string StudentQuizesOverviewTableHeaderQuizNameKey = "TableQuizNameColumnHeader";
+        public const string StudentQUizesOverviewTableHeaderMyResultKey = "TableMyResultColumnHeader";
+        public const string StudentQuizesOverviewTableNoResultKey = "TableUserDidNotTakeTheQuiz";
+        public const string StudentQuizesOverviewNoResultsMessageKey = "UserDidNotTakeTheQuizMessage";
 
     }
 }
