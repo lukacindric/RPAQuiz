@@ -135,6 +135,9 @@
   <data name="TableUserDidNotTakeTheQuiz" xml:space="preserve">
     <value>No result</value>
   </data>
+  <data name="UserAlreadyTookQuizMessage" xml:space="preserve">
+    <value>You already took the selected quiz!</value>
+  </data>
   <data name="UserDidNotTakeTheQuizMessage" xml:space="preserve">
     <value>There are no results for the selected quiz!</value>
   </data>

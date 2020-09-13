@@ -1,5 +1,6 @@
 ﻿using RPAQuiz.common.constants;
 using RPAQuiz.data.models;
+using RPAQuiz.features.student_quiz_result.viewmodels;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -46,6 +47,22 @@ namespace RPAQuiz.data.repositories
             }
             Connection.Close();
             return null;
+        }
+
+        public List<StudentQuizResultViewmodel> GetQuizResultForUser(int userId, int quizId)
+        {
+            var viewModels = new List<StudentQuizResultViewmodel>();
+            var questionsInQuiz = QuestionRepository.Instance.GetQuestionsForQuiz(quizId);
+            var answersInQuiz = AnswerRepository.Instance.GetAnswersInQuiz(questionsInQuiz);
+            var userAnswers = AnswerRepository.Instance.GetUserAnswersInQuiz(userId, quizId);
+            foreach(Question question in questionsInQuiz)
+            {
+                var answers = answersInQuiz.Where(a => a.QuestionId == question.Id).ToList();
+                var userAnswer = userAnswers.Where(a => a.QuestionId == question.Id).ToList()[0];
+                var userAnswerInQuiz = answers.Where(a => a.Id == userAnswer.AnswerId).ToList()[0];
+                viewModels.Add(new StudentQuizResultViewmodel(question, answers, userAnswerInQuiz));
+            }
+            return viewModels;
         }
     }
 }

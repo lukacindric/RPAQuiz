@@ -135,6 +135,9 @@
   <data name="TableUserDidNotTakeTheQuiz" xml:space="preserve">
     <value>Niste pristupili</value>
   </data>
+  <data name="UserAlreadyTookQuizMessage" xml:space="preserve">
+    <value>Već ste riješili kviz!</value>
+  </data>
   <data name="UserDidNotTakeTheQuizMessage" xml:space="preserve">
     <value>Nema rezultata za odabrani kviz!</value>
   </data>

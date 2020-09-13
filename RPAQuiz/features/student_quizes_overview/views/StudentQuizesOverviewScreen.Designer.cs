@@ -54,6 +54,7 @@
             resources.ApplyResources(this.BtnTakeQuiz, "BtnTakeQuiz");
             this.BtnTakeQuiz.Name = "BtnTakeQuiz";
             this.BtnTakeQuiz.UseVisualStyleBackColor = true;
+            this.BtnTakeQuiz.Click += new System.EventHandler(this.BtnTakeQuiz_Click);
             // 
             // BtnViewResults
             // 

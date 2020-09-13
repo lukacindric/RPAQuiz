@@ -60,9 +60,20 @@ namespace RPAQuiz.features.student_quizes_overview.views
         //user actions
         private void BtnViewResults_Click(object sender, EventArgs e)
         {
+            controller.OnUserClickedViewQuizResultsButton(GetSelectedQuizId());
+        }
+
+        private void BtnTakeQuiz_Click(object sender, EventArgs e)
+        {
+            controller.onUserClickedTakeQUizButton(GetSelectedQuizId());
+        }
+
+        //util
+        private int GetSelectedQuizId()
+        {
             var selectedRow = QuizesDataGridView.SelectedCells[0].OwningRow;
-            string quizId = (string) selectedRow.Cells[2].Value;
-            controller.OnUserClickedViewQuizResultsButton(Int32.Parse(quizId));
+            string quizId = (string)selectedRow.Cells[2].Value;
+            return Int32.Parse(quizId);
         }
     }
 }

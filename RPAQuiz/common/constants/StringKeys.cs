@@ -18,6 +18,7 @@ namespace RPAQuiz.common.constants
         public const string StudentQUizesOverviewTableHeaderMyResultKey = "TableMyResultColumnHeader";
         public const string StudentQuizesOverviewTableNoResultKey = "TableUserDidNotTakeTheQuiz";
         public const string StudentQuizesOverviewNoResultsMessageKey = "UserDidNotTakeTheQuizMessage";
+        public const string StudentQuizesOverviewQuizTakenMessageKey = "UserAlreadyTookQuizMessage";
 
     }
 }

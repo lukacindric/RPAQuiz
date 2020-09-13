@@ -2,6 +2,7 @@
 using RPAQuiz.common.constants;
 using RPAQuiz.data.models;
 using RPAQuiz.data.repositories;
+using RPAQuiz.features.student_quiz_result.views;
 using RPAQuiz.features.student_quizes_overview.view_models;
 using RPAQuiz.features.student_quizes_overview.views;
 using System;
@@ -50,10 +51,24 @@ namespace RPAQuiz.features.student_quizes_overview.controllers
         public void OnUserClickedViewQuizResultsButton(int quizId)
         {
            if (viewModels.Any(vM=> vM.QuizId == quizId )){
-
+                View.Hide();
+                var form = new StudentQuizResultScreen();
+                form.Show();
             } else
             {
                 view.ShowMessage(resourceManager.GetString(StringKeys.StudentQuizesOverviewNoResultsMessageKey));
+            }
+        }
+
+        public void onUserClickedTakeQUizButton(int quizId)
+        {
+            if (viewModels.Any(vM => vM.QuizId == quizId))
+            {
+                view.ShowMessage(resourceManager.GetString(StringKeys.StudentQuizesOverviewQuizTakenMessageKey));
+            }
+            else
+            {
+                
             }
         }
 

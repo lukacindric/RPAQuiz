@@ -14,6 +14,8 @@ namespace RPAQuiz.common.constants
         public const string IsStudent = "IsStudent";
         public const string Name = "Name";
         public const string IsCorrectAnswer = "IsCorrectAnswer";
-
+        public const string Text = "Text";
+        public const string QuestionId = "Question_Id";
+        public const string AnswerId = "Answer_Id";
     }
 }

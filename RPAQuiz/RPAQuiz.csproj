@@ -77,6 +77,8 @@
     <Compile Include="data\models\Quiz.cs" />
     <Compile Include="data\models\User.cs" />
     <Compile Include="data\models\UserAnswer.cs" />
+    <Compile Include="data\repositories\AnswerRepository.cs" />
+    <Compile Include="data\repositories\QuestionRepository.cs" />
     <Compile Include="data\repositories\QuizRepository.cs" />
     <Compile Include="data\repositories\UserRepository.cs" />
     <Compile Include="features\sign_in\contollers\SignInController.cs" />
@@ -94,6 +96,13 @@
       <DependentUpon>StudentQuizesOverviewScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="features\student_quizes_overview\view_models\StudentQuizesOverviewTableViewModel.cs" />
+    <Compile Include="features\student_quiz_result\viewmodels\StudentQuizResultViewmodel.cs" />
+    <Compile Include="features\student_quiz_result\views\StudentQuizResultScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="features\student_quiz_result\views\StudentQuizResultScreen.Designer.cs">
+      <DependentUpon>StudentQuizResultScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RPADatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -117,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="features\student_quizes_overview\views\StudentQuizesOverviewScreen.resx">
       <DependentUpon>StudentQuizesOverviewScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\student_quiz_result\views\StudentQuizResultScreen.resx">
+      <DependentUpon>StudentQuizResultScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -165,7 +177,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="features\student_quiz_result\controllers\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="data\database\RPADatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

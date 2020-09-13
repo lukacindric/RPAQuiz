@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPAQuiz.data.models
 {
-    class Answer
+    public class Answer
     {
         private int id;
         private string text;
