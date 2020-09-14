@@ -11,6 +11,7 @@ namespace RPAQuiz.common.constants
         public const string Username = "@USERNAME";
         public const string UserId = "@USER_ID";
         public const string QuizId = "@QUIZ_ID";
-        public const string MultipleQuestionIds = "@MultipleQuestionIds";
+        public const string MultipleQuestionIds = "@MULTIPLE_QUESTION_IDS";
+        public const string MultipleUserAnswers = "@MULTIPLE_USER_ANSWERS";
     }
 }

@@ -5,6 +5,7 @@ using RPAQuiz.data.repositories;
 using RPAQuiz.features.student_quiz_result.views;
 using RPAQuiz.features.student_quizes_overview.view_models;
 using RPAQuiz.features.student_quizes_overview.views;
+using RPAQuiz.features.student_take_quiz.views;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -34,7 +35,7 @@ namespace RPAQuiz.features.student_quizes_overview.controllers
             resourceManager.GetString(StringKeys.StudentQUizesOverviewTableHeaderMyResultKey),"Quiz_Id"};
             var dataTable = SetColumnsHeaderName(columnHeaders);
             var quizes = QuizRepository.Instance.GetQuizes();
-            viewModels = QuizRepository.Instance.GetQuizesViewModels(1);
+            viewModels = QuizRepository.Instance.GetQuizesViewModelsForQuizesOverview(1);
             foreach (Quiz quiz in quizes)
             {
                 var result = resourceManager.GetString(StringKeys.StudentQuizesOverviewTableNoResultKey);
@@ -48,7 +49,7 @@ namespace RPAQuiz.features.student_quizes_overview.controllers
 
         }
 
-        public void OnUserClickedViewQuizResultsButton(int quizId)
+        public void OnUserClickedViewQuizResultsButton(int quizId, string quizName)
         {
            if (viewModels.Any(vM=> vM.QuizId == quizId)){
                 View.Hide();
@@ -60,7 +61,7 @@ namespace RPAQuiz.features.student_quizes_overview.controllers
             }
         }
 
-        public void onUserClickedTakeQUizButton(int quizId)
+        public void OnUserClickedTakeQuizButton(int quizId, string quizName)
         {
             if (viewModels.Any(vM => vM.QuizId == quizId))
             {
@@ -68,7 +69,9 @@ namespace RPAQuiz.features.student_quizes_overview.controllers
             }
             else
             {
-                
+                View.Hide();
+                var form = new StudentTakeQuizScreen(1, quizId, quizName);
+                form.Show();
             }
         }
 

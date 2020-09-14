@@ -60,12 +60,12 @@ namespace RPAQuiz.features.student_quizes_overview.views
         //user actions
         private void BtnViewResults_Click(object sender, EventArgs e)
         {
-            controller.OnUserClickedViewQuizResultsButton(GetSelectedQuizId());
+            controller.OnUserClickedViewQuizResultsButton(GetSelectedQuizId(), GetSelectedQuizName());
         }
 
         private void BtnTakeQuiz_Click(object sender, EventArgs e)
         {
-            controller.onUserClickedTakeQUizButton(GetSelectedQuizId());
+            controller.OnUserClickedTakeQuizButton(GetSelectedQuizId(), GetSelectedQuizName());
         }
 
         //util
@@ -74,6 +74,13 @@ namespace RPAQuiz.features.student_quizes_overview.views
             var selectedRow = QuizesDataGridView.SelectedCells[0].OwningRow;
             string quizId = (string)selectedRow.Cells[2].Value;
             return Int32.Parse(quizId);
+        }
+
+        private string GetSelectedQuizName()
+        {
+            var selectedRow = QuizesDataGridView.SelectedCells[0].OwningRow;
+            string quizName = (string)selectedRow.Cells[0].Value;
+            return quizName;
         }
     }
 }

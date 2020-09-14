@@ -104,6 +104,14 @@
     <Compile Include="features\student_quiz_result\views\StudentQuizResultScreen.Designer.cs">
       <DependentUpon>StudentQuizResultScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="features\student_take_quiz\controllers\StudentTakeQuizController.cs" />
+    <Compile Include="features\student_take_quiz\viewmodels\StudentTakeQuizViewmodel.cs" />
+    <Compile Include="features\student_take_quiz\views\StudentTakeQuizScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="features\student_take_quiz\views\StudentTakeQuizScreen.Designer.cs">
+      <DependentUpon>StudentTakeQuizScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RPADatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -136,6 +144,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="features\student_quiz_result\views\StudentQuizResultScreen.resx">
       <DependentUpon>StudentQuizResultScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\student_take_quiz\views\StudentTakeQuizScreen.en.resx">
+      <DependentUpon>StudentTakeQuizScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\student_take_quiz\views\StudentTakeQuizScreen.hr.resx">
+      <DependentUpon>StudentTakeQuizScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\student_take_quiz\views\StudentTakeQuizScreen.resx">
+      <DependentUpon>StudentTakeQuizScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

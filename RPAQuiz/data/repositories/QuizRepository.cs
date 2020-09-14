@@ -1,6 +1,7 @@
 ﻿using RPAQuiz.common.constants;
 using RPAQuiz.data.models;
 using RPAQuiz.features.student_quizes_overview.view_models;
+using RPAQuiz.features.student_take_quiz.viewmodels;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -16,14 +17,15 @@ namespace RPAQuiz.data.repositories
 
         private SqlConnection Connection = new SqlConnection
         {
-            ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\data\\database\\RPADatabase.mdf;Integrated Security=True"
+            ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\data\\database\\RPADatabase.mdf;Integrated Security=False"
         };
 
         public static QuizRepository Instance { get { return lazyInstance.Value; } }
 
         private QuizRepository() { }
 
-        public  List<Quiz> GetQuizes()
+        //get
+        public List<Quiz> GetQuizes()
         {
             var quizes = new List<Quiz>();
             Connection.Open();
@@ -45,7 +47,20 @@ namespace RPAQuiz.data.repositories
             return quizes;
         }
 
-        public List<StudentQuizesOverviewTableViewModel>  GetQuizesViewModels(int userId)
+        public List<StudentTakeQuizViewmodel> GetQuizQuestions(int quizId)
+        {
+            var viewModels = new List<StudentTakeQuizViewmodel>();
+            var questionsInQuiz = QuestionRepository.Instance.GetQuestionsForQuiz(quizId);
+            var answersInQuiz = AnswerRepository.Instance.GetAnswersInQuiz(questionsInQuiz);
+            foreach (Question question in questionsInQuiz)
+            {
+                var answers = answersInQuiz.Where(a => a.QuestionId == question.Id).ToList();
+                viewModels.Add(new StudentTakeQuizViewmodel(question, answers, answers[0]));
+            }
+            return viewModels;
+        }
+
+        public List<StudentQuizesOverviewTableViewModel> GetQuizesViewModelsForQuizesOverview(int userId)
         {
             Connection.Open();
             SqlCommand command = new SqlCommand(SQLQueries.GetUserAnswers, Connection);
@@ -83,18 +98,46 @@ namespace RPAQuiz.data.repositories
                 }
             }
             Connection.Close();
-            foreach (KeyValuePair<int,string> quizesPair in quizDictionary)
+            foreach (KeyValuePair<int, string> quizesPair in quizDictionary)
             {
-               var correctAnswers = 0;
-               if (correctAnswersDictionary.ContainsKey(quizesPair.Key))
-                   correctAnswers =  correctAnswersDictionary[quizesPair.Key];
+                var correctAnswers = 0;
+                if (correctAnswersDictionary.ContainsKey(quizesPair.Key))
+                    correctAnswers = correctAnswersDictionary[quizesPair.Key];
                 var wrongAnswers = 0;
                 if (wrongAnswersDictionary.ContainsKey(quizesPair.Key))
                     wrongAnswers = wrongAnswersDictionary[quizesPair.Key];
-                var viewModel = new StudentQuizesOverviewTableViewModel(quizesPair.Key, quizesPair.Value, correctAnswers+"/"+(correctAnswers+wrongAnswers));
+                var viewModel = new StudentQuizesOverviewTableViewModel(quizesPair.Key, quizesPair.Value, correctAnswers + "/" + (correctAnswers + wrongAnswers));
                 studentQuizesOverviewTableViewModels.Add(viewModel);
             }
             return studentQuizesOverviewTableViewModels;
+        }
+
+        //insert
+
+        public bool InsertUserAnswersForQuiz(List<StudentTakeQuizViewmodel> viewmodels, int userId, int quizId)
+        {
+            var valuesStringToInsert = "";
+            viewmodels.ForEach(vM => valuesStringToInsert = valuesStringToInsert + vM.getStringRepresentationForInsertInDatabase(userId,quizId)+", ");
+            valuesStringToInsert = valuesStringToInsert.Remove(valuesStringToInsert.Length - 1);
+            valuesStringToInsert = valuesStringToInsert.Remove(valuesStringToInsert.Length - 1);
+            Connection.Open();
+            var ble = "Delete from QUizes where id = 3; ";
+            SqlCommand command = new SqlCommand(ble, Connection);
+            //command.CommandText = command.CommandText.Replace(SQLParameters.MultipleUserAnswers, valuesStringToInsert);
+            Console.Out.WriteLine(command.CommandText);
+            
+                try
+                {
+                var rows = command.ExecuteNonQuery();
+                var bla = "";
+                }
+                catch (Exception e)
+                {
+                    Connection.Close();
+                    return false;
+                }
+            Connection.Close();
+            return true;
         }
     }
 }
