@@ -1,16 +1,22 @@
 ﻿using RPAQuiz.common;
+using RPAQuiz.common.constants;
+using RPAQuiz.common.delegates;
 using RPAQuiz.data.repositories;
 using RPAQuiz.features.student_quiz_result.viewmodels;
 using RPAQuiz.features.student_take_quiz.viewmodels;
 using RPAQuiz.features.student_take_quiz.views;
 using System.Collections.Generic;
-
+using System.Resources;
 
 namespace RPAQuiz.features.student_take_quiz.controllers
 {
     class StudentTakeQuizController : BaseController
     {
+        private QuizTakenDelegate quizTakenDelegate;
+
         private readonly StudentTakeQuizScreen View;
+
+        private readonly ResourceManager resourceManager = new ResourceManager(typeof(StudentTakeQuizScreen));
 
         private List<StudentTakeQuizViewmodel> viewModels = new List<StudentTakeQuizViewmodel>();
 
@@ -25,10 +31,11 @@ namespace RPAQuiz.features.student_take_quiz.controllers
             this.View = view;
         }
 
-        public void OnCreate(int userId, int quizId)
+        public void OnCreate(int userId, int quizId, QuizTakenDelegate quizTakenDelegate)
         {
             this.userId = userId;
             this.quizId = quizId;
+            this.quizTakenDelegate = quizTakenDelegate;
             viewModels = QuizRepository.Instance.GetQuizQuestions(quizId);
             UpdateUI();
         }
@@ -69,7 +76,16 @@ namespace RPAQuiz.features.student_take_quiz.controllers
 
         public void OnSubmitAnswersButtonClicked()
         {
-            QuizRepository.Instance.InsertUserAnswersForQuiz(viewModels, userId, quizId);
+           var didInsert = QuizRepository.Instance.InsertUserAnswersForQuiz(viewModels, userId, quizId);
+           if (didInsert)
+            {
+                View.ShowMessage(resourceManager.GetString(StringKeys.StudentTakeQuizInsertAnswersSuccessMessage));
+                quizTakenDelegate.OnQuizTaken();
+                View.Close();
+            } else
+            {
+                View.ShowMessage(resourceManager.GetString(StringKeys.StudentTakeQuizInsertAnswersErrorMessage));
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using RPAQuiz.common;
 using RPAQuiz.common.constants;
+using RPAQuiz.common.delegates;
 using RPAQuiz.data.models;
 using RPAQuiz.data.repositories;
 using RPAQuiz.features.student_quiz_result.views;
@@ -16,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace RPAQuiz.features.student_quizes_overview.controllers
 {
-   public class StudentQuizesOverviewController : BaseController
+   public class StudentQuizesOverviewController : BaseController, QuizTakenDelegate
     {
         private readonly StudentQuizesOverviewScreen View;
 
@@ -70,7 +71,7 @@ namespace RPAQuiz.features.student_quizes_overview.controllers
             else
             {
                 View.Hide();
-                var form = new StudentTakeQuizScreen(1, quizId, quizName);
+                var form = new StudentTakeQuizScreen(1, quizId, quizName, this);
                 form.Show();
             }
         }
@@ -84,6 +85,13 @@ namespace RPAQuiz.features.student_quizes_overview.controllers
                 dt.Columns.Add(item);
             }
             return dt;
+        }
+
+        //delegates
+        public void OnQuizTaken()
+        {
+            OnCreate();
+            View.Show();
         }
     }
 }

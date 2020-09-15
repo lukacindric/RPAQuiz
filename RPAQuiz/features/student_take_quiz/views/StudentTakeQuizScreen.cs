@@ -1,4 +1,5 @@
 ﻿using RPAQuiz.common;
+using RPAQuiz.common.delegates;
 using RPAQuiz.features.student_take_quiz.controllers;
 using System;
 using System.Drawing;
@@ -15,11 +16,11 @@ namespace RPAQuiz.features.student_take_quiz.views
 
         private readonly StudentTakeQuizController controller;
 
-        public StudentTakeQuizScreen(int userId, int quizId, string quizName) : base()
+        public StudentTakeQuizScreen(int userId, int quizId, string quizName, QuizTakenDelegate quizTakenDelegate) : base()
         {
             InitializeComponent();
             this.controller = Controller as StudentTakeQuizController;
-            controller.OnCreate(userId, quizId);
+            controller.OnCreate(userId, quizId, quizTakenDelegate);
             this.Text = quizName;
         }
 

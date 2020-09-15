@@ -20,5 +20,9 @@ namespace RPAQuiz.common.constants
         public const string StudentQuizesOverviewNoResultsMessageKey = "UserDidNotTakeTheQuizMessage";
         public const string StudentQuizesOverviewQuizTakenMessageKey = "UserAlreadyTookQuizMessage";
 
+        //StudentTakeQuiz screen
+        public const string StudentTakeQuizInsertAnswersErrorMessage = "InsertUserAnswersErrorMessage";
+        public const string StudentTakeQuizInsertAnswersSuccessMessage = "InsertUserAnswersSuccessMessage";
+
     }
 }

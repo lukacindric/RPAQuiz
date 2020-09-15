@@ -71,6 +71,7 @@
     <Compile Include="common\constants\SQLParameters.cs" />
     <Compile Include="common\constants\SQLQueries.cs" />
     <Compile Include="common\constants\StringKeys.cs" />
+    <Compile Include="common\delegates\QuizTakenDelegate.cs" />
     <Compile Include="common\RPAQuiz.cs" />
     <Compile Include="data\models\Answer.cs" />
     <Compile Include="data\models\Question.cs" />
@@ -204,10 +205,10 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="data\database\RPADatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="data\database\RPADatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>RPADatabase.mdf</DependentUpon>
     </Content>
   </ItemGroup>

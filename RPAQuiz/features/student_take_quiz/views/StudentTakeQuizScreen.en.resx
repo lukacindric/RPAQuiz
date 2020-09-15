@@ -126,4 +126,10 @@
   <data name="BtnSubmitQuiz.Text" xml:space="preserve">
     <value>Submit Answers</value>
   </data>
+  <data name="InsertUserAnswersErrorMessage" xml:space="preserve">
+    <value>Oops! Something went wrong!</value>
+  </data>
+  <data name="InsertUserAnswersSuccessMessage" xml:space="preserve">
+    <value>Answers submited successfully.</value>
+  </data>
 </root>

@@ -117,19 +117,15 @@ namespace RPAQuiz.data.repositories
         public bool InsertUserAnswersForQuiz(List<StudentTakeQuizViewmodel> viewmodels, int userId, int quizId)
         {
             var valuesStringToInsert = "";
-            viewmodels.ForEach(vM => valuesStringToInsert = valuesStringToInsert + vM.getStringRepresentationForInsertInDatabase(userId,quizId)+", ");
-            valuesStringToInsert = valuesStringToInsert.Remove(valuesStringToInsert.Length - 1);
+            viewmodels.ForEach(vM => valuesStringToInsert = valuesStringToInsert + vM.getStringRepresentationForInsertInDatabase(userId,quizId)+",");
             valuesStringToInsert = valuesStringToInsert.Remove(valuesStringToInsert.Length - 1);
             Connection.Open();
-            var ble = "Delete from QUizes where id = 3; ";
-            SqlCommand command = new SqlCommand(ble, Connection);
-            //command.CommandText = command.CommandText.Replace(SQLParameters.MultipleUserAnswers, valuesStringToInsert);
-            Console.Out.WriteLine(command.CommandText);
+            SqlCommand command = new SqlCommand(SQLQueries.InsertUserAnswersForQuiz, Connection);
+            command.CommandText = command.CommandText.Replace(SQLParameters.MultipleUserAnswers, valuesStringToInsert);
             
                 try
                 {
-                var rows = command.ExecuteNonQuery();
-                var bla = "";
+                    command.ExecuteNonQuery();
                 }
                 catch (Exception e)
                 {

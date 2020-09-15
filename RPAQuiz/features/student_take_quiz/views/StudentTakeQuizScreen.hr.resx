@@ -123,7 +123,13 @@
   <data name="BtnPreviousQuestion.Text" xml:space="preserve">
     <value>Prethodno</value>
   </data>
-  <data name="String1" xml:space="preserve">
+  <data name="BtnSubmitQuiz.Text" xml:space="preserve">
     <value>Predaj odgovore</value>
+  </data>
+  <data name="InsertUserAnswersErrorMessage" xml:space="preserve">
+    <value>Došlo je do pogreške!</value>
+  </data>
+  <data name="InsertUserAnswersSuccessMessage" xml:space="preserve">
+    <value>Odgovori su spremljeni.</value>
   </data>
 </root>
