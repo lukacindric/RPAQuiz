@@ -30,6 +30,14 @@ namespace RPAQuiz.common.constants
         //insert
         public const string InsertUserAnswersForQuiz = "INSERT INTO  UserAnswers(User_Id, Question_Id, Answer_Id, Quiz_Id) VALUES " + SQLParameters.MultipleUserAnswers;
 
+        public const string InsertQuizAndGetId = "INSERT INTO Quizes(Name) OUTPUT INSERTED.ID VALUES(" + SQLParameters.QuizName + "); ";
+
+        public const string InsertQuestion = "INSERT INTO Questions(Text) OUTPUT INSERTED.ID VALUES(" + SQLParameters.QuestionText + ")";
+
+        public const string InsertQuizQuestion = "INSERT INTO QuizQuestions(Quiz_Id,Question_Id) VALUES(" + SQLParameters.QuizId + "," + SQLParameters.QuestionId + ");";
+
+        public const string InsertAnswersForQuestion = "INSERT INTO Answers(Text, Question_Id, IsCorrectAnswer) VALUES " + SQLParameters.MultipleAnswers;
+        
         //delete
         public const string DeleteQuiz = "DELETE FROM Quizes WHERE Id =" + SQLParameters.QuizId;
     }

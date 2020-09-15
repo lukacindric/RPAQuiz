@@ -37,5 +37,11 @@ namespace RPAQuiz.common.constants
         public const string TeacherQuizResultTableHeaderUsernameKey = "TableHeaderUsernameKey";
         public const string TeacherQuizResultTableHeaderResultKey = "TableHeaderResultKey";
 
+        // TeacherCreateQuiz screen
+        public const string TeacherCreateQuizInputFieldsWarning = "InputFieldsWarning";
+        public const string TeacherCreateQuizSuccessMessage = "SuccessMessage";
+        public const string TeacherCreateQuizErrorMessage = "ErrorMessage";
+
+
     }
 }

@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LblINputQuizName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LblINputQuizName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 12</value>
+  </data>
+  <data name="LblINputQuizName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="LblINputQuizName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LblINputQuizName.Text" xml:space="preserve">
+    <value>Naziv kviza:</value>
+  </data>
+  <data name="&gt;&gt;LblINputQuizName.Name" xml:space="preserve">
+    <value>LblINputQuizName</value>
+  </data>
+  <data name="&gt;&gt;LblINputQuizName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblINputQuizName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblINputQuizName.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="BtnPreviousQuestion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>568, 49</value>
+  </data>
+  <data name="BtnPreviousQuestion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="BtnPreviousQuestion.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="BtnPreviousQuestion.Text" xml:space="preserve">
+    <value>Prethodno</value>
+  </data>
+  <data name="&gt;&gt;BtnPreviousQuestion.Name" xml:space="preserve">
+    <value>BtnPreviousQuestion</value>
+  </data>
+  <data name="&gt;&gt;BtnPreviousQuestion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnPreviousQuestion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BtnPreviousQuestion.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="LblQuestionNumber.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblQuestionNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>649, 54</value>
+  </data>
+  <data name="LblQuestionNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="LblQuestionNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="LblQuestionNumber.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="LblQuestionNumber.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;LblQuestionNumber.Name" xml:space="preserve">
+    <value>LblQuestionNumber</value>
+  </data>
+  <data name="&gt;&gt;LblQuestionNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblQuestionNumber.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblQuestionNumber.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="BtnNextQuestion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>690, 49</value>
+  </data>
+  <data name="BtnNextQuestion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="BtnNextQuestion.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="BtnNextQuestion.Text" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;BtnNextQuestion.Name" xml:space="preserve">
+    <value>BtnNextQuestion</value>
+  </data>
+  <data name="&gt;&gt;BtnNextQuestion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnNextQuestion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BtnNextQuestion.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="TxtInputQuizName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 9</value>
+  </data>
+  <data name="TxtInputQuizName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 20</value>
+  </data>
+  <data name="TxtInputQuizName.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;TxtInputQuizName.Name" xml:space="preserve">
+    <value>TxtInputQuizName</value>
+  </data>
+  <data name="&gt;&gt;TxtInputQuizName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TxtInputQuizName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TxtInputQuizName.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="LblInputQuestion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblInputQuestion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 77</value>
+  </data>
+  <data name="LblInputQuestion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
+  </data>
+  <data name="LblInputQuestion.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="LblInputQuestion.Text" xml:space="preserve">
+    <value>Unesite pitanje:</value>
+  </data>
+  <data name="&gt;&gt;LblInputQuestion.Name" xml:space="preserve">
+    <value>LblInputQuestion</value>
+  </data>
+  <data name="&gt;&gt;LblInputQuestion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblInputQuestion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblInputQuestion.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="TxtQuestion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 77</value>
+  </data>
+  <data name="TxtQuestion.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TxtQuestion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>683, 62</value>
+  </data>
+  <data name="TxtQuestion.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;TxtQuestion.Name" xml:space="preserve">
+    <value>TxtQuestion</value>
+  </data>
+  <data name="&gt;&gt;TxtQuestion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TxtQuestion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TxtQuestion.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="LblCorrectAnswer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblCorrectAnswer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 159</value>
+  </data>
+  <data name="LblCorrectAnswer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="LblCorrectAnswer.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="LblCorrectAnswer.Text" xml:space="preserve">
+    <value>Točan odgovor:</value>
+  </data>
+  <data name="&gt;&gt;LblCorrectAnswer.Name" xml:space="preserve">
+    <value>LblCorrectAnswer</value>
+  </data>
+  <data name="&gt;&gt;LblCorrectAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblCorrectAnswer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblCorrectAnswer.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="RbFirstAnswer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RbFirstAnswer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 186</value>
+  </data>
+  <data name="RbFirstAnswer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 17</value>
+  </data>
+  <data name="RbFirstAnswer.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="RbFirstAnswer.Text" xml:space="preserve">
+    <value>Odgovor1:</value>
+  </data>
+  <data name="&gt;&gt;RbFirstAnswer.Name" xml:space="preserve">
+    <value>RbFirstAnswer</value>
+  </data>
+  <data name="&gt;&gt;RbFirstAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbFirstAnswer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RbFirstAnswer.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="RbSecondAnswer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RbSecondAnswer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 236</value>
+  </data>
+  <data name="RbSecondAnswer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 17</value>
+  </data>
+  <data name="RbSecondAnswer.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="RbSecondAnswer.Text" xml:space="preserve">
+    <value>Odgovor2:</value>
+  </data>
+  <data name="&gt;&gt;RbSecondAnswer.Name" xml:space="preserve">
+    <value>RbSecondAnswer</value>
+  </data>
+  <data name="&gt;&gt;RbSecondAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbSecondAnswer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RbSecondAnswer.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="RbThirdAnswer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="RbThirdAnswer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="RbThirdAnswer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 286</value>
+  </data>
+  <data name="RbThirdAnswer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 17</value>
+  </data>
+  <data name="RbThirdAnswer.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="RbThirdAnswer.Text" xml:space="preserve">
+    <value>Odgovor3:</value>
+  </data>
+  <data name="&gt;&gt;RbThirdAnswer.Name" xml:space="preserve">
+    <value>RbThirdAnswer</value>
+  </data>
+  <data name="&gt;&gt;RbThirdAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbThirdAnswer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RbThirdAnswer.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="RbFourthAnswer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RbFourthAnswer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 336</value>
+  </data>
+  <data name="RbFourthAnswer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 17</value>
+  </data>
+  <data name="RbFourthAnswer.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="RbFourthAnswer.Text" xml:space="preserve">
+    <value>Odgovor4:</value>
+  </data>
+  <data name="&gt;&gt;RbFourthAnswer.Name" xml:space="preserve">
+    <value>RbFourthAnswer</value>
+  </data>
+  <data name="&gt;&gt;RbFourthAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbFourthAnswer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RbFourthAnswer.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="TxtFirstAnswer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 185</value>
+  </data>
+  <data name="TxtFirstAnswer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>664, 20</value>
+  </data>
+  <data name="TxtFirstAnswer.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;TxtFirstAnswer.Name" xml:space="preserve">
+    <value>TxtFirstAnswer</value>
+  </data>
+  <data name="&gt;&gt;TxtFirstAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TxtFirstAnswer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TxtFirstAnswer.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="TxtSecondAnswer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 235</value>
+  </data>
+  <data name="TxtSecondAnswer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>663, 20</value>
+  </data>
+  <data name="TxtSecondAnswer.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;TxtSecondAnswer.Name" xml:space="preserve">
+    <value>TxtSecondAnswer</value>
+  </data>
+  <data name="&gt;&gt;TxtSecondAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TxtSecondAnswer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TxtSecondAnswer.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="TxtThirdAnswer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 285</value>
+  </data>
+  <data name="TxtThirdAnswer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>663, 20</value>
+  </data>
+  <data name="TxtThirdAnswer.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;TxtThirdAnswer.Name" xml:space="preserve">
+    <value>TxtThirdAnswer</value>
+  </data>
+  <data name="&gt;&gt;TxtThirdAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TxtThirdAnswer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TxtThirdAnswer.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TxtFourthAnswer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 335</value>
+  </data>
+  <data name="TxtFourthAnswer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>663, 20</value>
+  </data>
+  <data name="TxtFourthAnswer.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;TxtFourthAnswer.Name" xml:space="preserve">
+    <value>TxtFourthAnswer</value>
+  </data>
+  <data name="&gt;&gt;TxtFourthAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TxtFourthAnswer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TxtFourthAnswer.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="BtnCreateQuiz.Location" type="System.Drawing.Point, System.Drawing">
+    <value>663, 404</value>
+  </data>
+  <data name="BtnCreateQuiz.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 23</value>
+  </data>
+  <data name="BtnCreateQuiz.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="BtnCreateQuiz.Text" xml:space="preserve">
+    <value>Kreiraj Kviz</value>
+  </data>
+  <data name="&gt;&gt;BtnCreateQuiz.Name" xml:space="preserve">
+    <value>BtnCreateQuiz</value>
+  </data>
+  <data name="&gt;&gt;BtnCreateQuiz.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnCreateQuiz.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BtnCreateQuiz.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="BtnDeleteQuestion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 48</value>
+  </data>
+  <data name="BtnDeleteQuestion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 23</value>
+  </data>
+  <data name="BtnDeleteQuestion.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="BtnDeleteQuestion.Text" xml:space="preserve">
+    <value>Izbriši pitanje</value>
+  </data>
+  <data name="&gt;&gt;BtnDeleteQuestion.Name" xml:space="preserve">
+    <value>BtnDeleteQuestion</value>
+  </data>
+  <data name="&gt;&gt;BtnDeleteQuestion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnDeleteQuestion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BtnDeleteQuestion.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>TeacherCreateQuizScreen</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TeacherCreateQuizScreen</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

@@ -71,6 +71,7 @@
     <Compile Include="common\constants\SQLParameters.cs" />
     <Compile Include="common\constants\SQLQueries.cs" />
     <Compile Include="common\constants\StringKeys.cs" />
+    <Compile Include="common\delegates\QuizCreatedDelegate.cs" />
     <Compile Include="common\delegates\QuizTakenDelegate.cs" />
     <Compile Include="common\RPAQuiz.cs" />
     <Compile Include="common\util\MessageBoxManager.cs" />
@@ -113,6 +114,14 @@
     </Compile>
     <Compile Include="features\student_take_quiz\views\StudentTakeQuizScreen.Designer.cs">
       <DependentUpon>StudentTakeQuizScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="features\teacher_create_quiz\controllers\TeacherCreateQuizController.cs" />
+    <Compile Include="features\teacher_create_quiz\viewmodels\TeacherCreateQuizViewmodel.cs" />
+    <Compile Include="features\teacher_create_quiz\views\TeacherCreateQuizScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="features\teacher_create_quiz\views\TeacherCreateQuizScreen.Designer.cs">
+      <DependentUpon>TeacherCreateQuizScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="features\teacher_quizes_overview\controllers\TeacherQuizesOverviewController.cs" />
     <Compile Include="features\teacher_quizes_overview\views\TeacherQuizesOverviewScreen.cs">
@@ -170,6 +179,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="features\student_take_quiz\views\StudentTakeQuizScreen.resx">
       <DependentUpon>StudentTakeQuizScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\teacher_create_quiz\views\TeacherCreateQuizScreen.en.resx">
+      <DependentUpon>TeacherCreateQuizScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\teacher_create_quiz\views\TeacherCreateQuizScreen.hr.resx">
+      <DependentUpon>TeacherCreateQuizScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\teacher_create_quiz\views\TeacherCreateQuizScreen.resx">
+      <DependentUpon>TeacherCreateQuizScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="features\teacher_quizes_overview\views\TeacherQuizesOverviewScreen.en.resx">
       <DependentUpon>TeacherQuizesOverviewScreen.cs</DependentUpon>

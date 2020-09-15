@@ -1,5 +1,6 @@
 ﻿using RPAQuiz.common.constants;
 using RPAQuiz.data.models;
+using RPAQuiz.features.teacher_create_quiz.viewmodels;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -22,6 +23,7 @@ namespace RPAQuiz.data.repositories
 
         private QuestionRepository() { }
 
+        //get
         public List<Question> GetQuestionsForQuiz(int quizId)
         {
             var questionsInQuiz = new List<Question>();
@@ -43,6 +45,58 @@ namespace RPAQuiz.data.repositories
             }
             Connection.Close();
             return questionsInQuiz;
+        }
+
+        //insert
+        public bool InsertQuestionAndAnswers(int quizId, TeacherCreateQuizViewmodel model)
+        {
+            Connection.Open();
+            var questionId = InsertQuestion(model.Question);
+            if (questionId == -1 || !LinkQuestionAndQuiz(quizId,questionId) || !AnswerRepository.Instance.InsertAnswersForQuestion(questionId, model))
+            {
+                Connection.Close();
+                return false;
+            }
+
+            Connection.Close();
+            return true;
+
+        }
+
+        private bool LinkQuestionAndQuiz(int quizId, int questionId)
+        {
+            SqlCommand command = new SqlCommand(SQLQueries.InsertQuizQuestion, Connection);
+            command.Parameters.Add(SQLParameters.QuizId, System.Data.SqlDbType.Int);
+            command.Parameters[SQLParameters.QuizId].Value = quizId;
+            command.Parameters.Add(SQLParameters.QuestionId, System.Data.SqlDbType.Int);
+            command.Parameters[SQLParameters.QuestionId].Value = questionId;
+
+            try
+            {
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        private int InsertQuestion(string questionText)
+        {
+            SqlCommand command = new SqlCommand(SQLQueries.InsertQuestion, Connection);
+            command.Parameters.Add(SQLParameters.QuestionText, System.Data.SqlDbType.NVarChar);
+            command.Parameters[SQLParameters.QuestionText].Value = questionText;
+
+            try
+            {
+                var id = (int)command.ExecuteScalar();
+                return id;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
         }
 
     }

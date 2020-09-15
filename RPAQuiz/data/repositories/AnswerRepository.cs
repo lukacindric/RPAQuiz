@@ -1,5 +1,6 @@
 ﻿using RPAQuiz.common.constants;
 using RPAQuiz.data.models;
+using RPAQuiz.features.teacher_create_quiz.viewmodels;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -22,6 +23,7 @@ namespace RPAQuiz.data.repositories
 
         private AnswerRepository() { }
 
+        //get
         public List<Answer> GetAnswersInQuiz(List<Question> questions)
         {
             var answers = new List<Answer>();
@@ -71,6 +73,25 @@ namespace RPAQuiz.data.repositories
             }
             Connection.Close();
             return answers;
+        }
+
+        //insert
+        public bool InsertAnswersForQuestion(int questionId, TeacherCreateQuizViewmodel model)
+        {
+            Connection.Open();
+            SqlCommand command = new SqlCommand(SQLQueries.InsertAnswersForQuestion, Connection);
+            command.CommandText = command.CommandText.Replace(SQLParameters.MultipleAnswers, model.GetStringForInsertAnswersToDatabase(questionId));
+            try
+            {
+                command.ExecuteNonQuery();
+                Connection.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                Connection.Close();
+                return false;
+            }
         }
     }
 }

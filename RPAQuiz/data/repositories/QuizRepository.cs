@@ -2,6 +2,7 @@
 using RPAQuiz.data.models;
 using RPAQuiz.features.student_quizes_overview.view_models;
 using RPAQuiz.features.student_take_quiz.viewmodels;
+using RPAQuiz.features.teacher_create_quiz.viewmodels;
 using RPAQuiz.features.teacher_quiz_result.viewmodels;
 using System;
 using System.Collections.Generic;
@@ -166,7 +167,6 @@ namespace RPAQuiz.data.repositories
         }
 
         //insert
-
         public bool InsertUserAnswersForQuiz(List<StudentTakeQuizViewmodel> viewmodels, int userId, int quizId)
         {
             var valuesStringToInsert = "";
@@ -188,6 +188,40 @@ namespace RPAQuiz.data.repositories
             Connection.Close();
             return true;
         }
+
+        public bool InsertNewQuiz(string quizName, List<TeacherCreateQuizViewmodel> viewmodels)
+        {
+            var quizId = InsertQuizAndGetId(quizName);
+            if (quizId == -1) return false;
+            foreach (TeacherCreateQuizViewmodel model in viewmodels)
+            {
+                if (!QuestionRepository.Instance.InsertQuestionAndAnswers(quizId, model))
+                    return false;
+            }
+            return true;
+        }
+
+        private int InsertQuizAndGetId(string quizName)
+        {
+            Connection.Open();
+            SqlCommand command = new SqlCommand(SQLQueries.InsertQuizAndGetId, Connection);
+            command.Parameters.Add(SQLParameters.QuizName, System.Data.SqlDbType.NVarChar);
+            command.Parameters[SQLParameters.QuizName].Value = quizName;
+
+            try
+            {
+                var id = (int) command.ExecuteScalar();
+                Connection.Close();
+                return id;
+            }
+            catch (Exception)
+            {
+                Connection.Close();
+                return -1;
+            }
+        }
+
+        //delete
         public bool DeleteQuiz(int quizId)
         {
             Connection.Open();

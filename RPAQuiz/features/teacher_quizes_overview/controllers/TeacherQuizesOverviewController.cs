@@ -1,7 +1,9 @@
 ﻿using RPAQuiz.common;
 using RPAQuiz.common.constants;
+using RPAQuiz.common.delegates;
 using RPAQuiz.data.models;
 using RPAQuiz.data.repositories;
+using RPAQuiz.features.teacher_create_quiz.views;
 using RPAQuiz.features.teacher_quiz_result.views;
 using RPAQuiz.features.teacher_quizes_overview.views;
 using System;
@@ -14,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace RPAQuiz.features.teacher_quizes_overview.controllers
 {
-    public class TeacherQuizesOverviewController : BaseController
+    public class TeacherQuizesOverviewController : BaseController, QuizCreatedDelegate
     {
         private readonly TeacherQuizesOverviewScreen View;
 
@@ -48,7 +50,8 @@ namespace RPAQuiz.features.teacher_quizes_overview.controllers
 
         public void OnUserClickedCreateQuizButton()
         {
-           
+            var form = new TeacherCreateQuizScreen(this);
+            form.Show();
         }
 
         public void OnUserClickedEditQuizButton(int quizId, string quizName)
@@ -84,5 +87,10 @@ namespace RPAQuiz.features.teacher_quizes_overview.controllers
             return dt;
         }
 
+        //delegate
+        public void OnQuizCreated()
+        {
+            OnCreate();
+        }
     }
 }
