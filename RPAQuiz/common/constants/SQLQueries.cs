@@ -21,5 +21,8 @@ namespace RPAQuiz.common.constants
 
         //insert
         public const string InsertUserAnswersForQuiz = "INSERT INTO  UserAnswers(User_Id, Question_Id, Answer_Id, Quiz_Id) VALUES " + SQLParameters.MultipleUserAnswers;
+
+        //delete
+        public const string DeleteQuiz = "DELETE FROM Quizes WHERE Id =" + SQLParameters.QuizId;
     }
 }

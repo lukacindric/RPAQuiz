@@ -13,16 +13,25 @@ namespace RPAQuiz.common.constants
         public const string SignInScreenNoUsernameKey = "NoUserWIthThisUsernameMessage";
         public const string SignInScreenWrongPasswordKey = "WrongPasswordMessage";
 
-        //StudentQuizesOverview screen
+        // StudentQuizesOverview screen
         public const string StudentQuizesOverviewTableHeaderQuizNameKey = "TableQuizNameColumnHeader";
         public const string StudentQUizesOverviewTableHeaderMyResultKey = "TableMyResultColumnHeader";
         public const string StudentQuizesOverviewTableNoResultKey = "TableUserDidNotTakeTheQuiz";
         public const string StudentQuizesOverviewNoResultsMessageKey = "UserDidNotTakeTheQuizMessage";
         public const string StudentQuizesOverviewQuizTakenMessageKey = "UserAlreadyTookQuizMessage";
 
-        //StudentTakeQuiz screen
+        // StudentTakeQuiz screen
         public const string StudentTakeQuizInsertAnswersErrorMessage = "InsertUserAnswersErrorMessage";
         public const string StudentTakeQuizInsertAnswersSuccessMessage = "InsertUserAnswersSuccessMessage";
+
+        // TeacherQuizesOverview screen
+        public const string TeacherQuizesOverviewTableHeaderName = "TableQuizNameColumnHeader";
+        public const string TeacherQuizesOverviewDialogYesButton = "DialogYesButton";
+        public const string TeacherQuizesOverviewDialogNoButton = "DialogNoButton";
+        public const string TeacherQuizesOverviewDialogTitle = "DialogTitle";
+        public const string TeacherQuizesOverviewDialogMessage = "DialogMessage";
+        public const string TeacherQuizesOverviewDeleteQuizSuccessMessage = "DeleteQuizSuccessMessage";
+        public const string TeacherQuizesOverviewDeleteQuizErrorMessage = "DeleteQuizErrorMessage";
 
     }
 }

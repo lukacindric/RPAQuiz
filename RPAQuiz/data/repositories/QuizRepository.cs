@@ -127,11 +127,30 @@ namespace RPAQuiz.data.repositories
                 {
                     command.ExecuteNonQuery();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     Connection.Close();
                     return false;
                 }
+            Connection.Close();
+            return true;
+        }
+        public bool DeleteQuiz(int quizId)
+        {
+            Connection.Open();
+            SqlCommand command = new SqlCommand(SQLQueries.DeleteQuiz, Connection);
+            command.Parameters.Add(SQLParameters.QuizId, System.Data.SqlDbType.Int);
+            command.Parameters[SQLParameters.QuizId].Value = quizId;
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                Connection.Close();
+                return false;
+            }
             Connection.Close();
             return true;
         }
