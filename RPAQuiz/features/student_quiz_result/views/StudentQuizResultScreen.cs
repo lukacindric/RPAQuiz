@@ -22,12 +22,12 @@ namespace RPAQuiz.features.student_quiz_result.views
 
         private readonly StudentQuizResultController controller;
 
-        public StudentQuizResultScreen(int userId, int quizId, string quizName) : base()
+        public StudentQuizResultScreen(int userId, int quizId, string formName) : base()
         {
             InitializeComponent();
             this.controller = Controller as StudentQuizResultController;
             controller.OnCreate(userId,quizId);
-            this.Text = quizName;
+            this.Text = formName;
         }
 
         public override void ShowMessage(string message)

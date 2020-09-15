@@ -33,5 +33,9 @@ namespace RPAQuiz.common.constants
         public const string TeacherQuizesOverviewDeleteQuizSuccessMessage = "DeleteQuizSuccessMessage";
         public const string TeacherQuizesOverviewDeleteQuizErrorMessage = "DeleteQuizErrorMessage";
 
+        // TeacherQuizResult screen
+        public const string TeacherQuizResultTableHeaderUsernameKey = "TableHeaderUsernameKey";
+        public const string TeacherQuizResultTableHeaderResultKey = "TableHeaderResultKey";
+
     }
 }

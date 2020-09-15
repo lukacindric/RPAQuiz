@@ -2,6 +2,7 @@
 using RPAQuiz.data.models;
 using RPAQuiz.features.student_quizes_overview.view_models;
 using RPAQuiz.features.student_take_quiz.viewmodels;
+using RPAQuiz.features.teacher_quiz_result.viewmodels;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -56,6 +57,58 @@ namespace RPAQuiz.data.repositories
             {
                 var answers = answersInQuiz.Where(a => a.QuestionId == question.Id).ToList();
                 viewModels.Add(new StudentTakeQuizViewmodel(question, answers, answers[0]));
+            }
+            return viewModels;
+        }
+
+        public List<TeacherQuizResultTableViewModel> GetQuizResult(int quizId)
+        {
+            Connection.Open();
+            SqlCommand command = new SqlCommand(SQLQueries.GetResultsForQuiz, Connection);
+            command.Parameters.Add(SQLParameters.QuizId, System.Data.SqlDbType.Int);
+            command.Parameters[SQLParameters.QuizId].Value = quizId;
+            var userDictionary = new Dictionary<int, string>();
+            var correctAnswersDictionary = new Dictionary<int, int>();
+            var wrongAnswersDictionary = new Dictionary<int, int>();
+            var viewModels = new List<TeacherQuizResultTableViewModel>();
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        bool DbIsCorrectAnswer = reader.GetBoolean(reader.GetOrdinal(SQLColumns.IsCorrectAnswer));
+                        string DbUsername = reader.GetString(reader.GetOrdinal(SQLColumns.Username));
+                        int DbUserId = reader.GetInt32(reader.GetOrdinal(SQLColumns.Id));
+                        userDictionary[DbUserId] = DbUsername;
+                        if (DbIsCorrectAnswer)
+                        {
+                            if (correctAnswersDictionary.ContainsKey(DbUserId))
+                                correctAnswersDictionary[DbUserId] += 1;
+                            else
+                                correctAnswersDictionary[DbUserId] = 1;
+                        }
+                        else
+                        {
+                            if (wrongAnswersDictionary.ContainsKey(DbUserId))
+                                wrongAnswersDictionary[DbUserId] += 1;
+                            else
+                                wrongAnswersDictionary[DbUserId] = 1;
+                        }
+                    }
+                }
+            }
+            Connection.Close();
+            foreach (KeyValuePair<int, string> userPair in userDictionary)
+            {
+                var correctAnswers = 0;
+                if (correctAnswersDictionary.ContainsKey(userPair.Key))
+                    correctAnswers = correctAnswersDictionary[userPair.Key];
+                var wrongAnswers = 0;
+                if (wrongAnswersDictionary.ContainsKey(userPair.Key))
+                    wrongAnswers = wrongAnswersDictionary[userPair.Key];
+                var viewModel = new TeacherQuizResultTableViewModel(userPair.Key, userPair.Value, correctAnswers + "/" + (correctAnswers + wrongAnswers));
+                viewModels.Add(viewModel);
             }
             return viewModels;
         }

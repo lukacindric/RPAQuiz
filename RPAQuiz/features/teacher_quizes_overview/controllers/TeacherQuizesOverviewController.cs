@@ -2,6 +2,7 @@
 using RPAQuiz.common.constants;
 using RPAQuiz.data.models;
 using RPAQuiz.data.repositories;
+using RPAQuiz.features.teacher_quiz_result.views;
 using RPAQuiz.features.teacher_quizes_overview.views;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,8 @@ namespace RPAQuiz.features.teacher_quizes_overview.controllers
 
         public void OnUserClickedViewQuizResultsButton(int quizId, string quizName)
         {
-          
+            var form = new TeacherQuizResultScreen(quizId, quizName);
+            form.Show();
         }
 
         public void OnUserClickedCreateQuizButton()
