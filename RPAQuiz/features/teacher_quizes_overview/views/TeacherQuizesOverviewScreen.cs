@@ -54,6 +54,7 @@ namespace RPAQuiz.features.teacher_quizes_overview.views
         private void SetupUI()
         {
             SetupQuizesDataGridView();
+            this.Icon = Properties.Resources.efzg_logo;
         }
 
         private void SetupQuizesDataGridView()
@@ -108,6 +109,11 @@ namespace RPAQuiz.features.teacher_quizes_overview.views
             var selectedRow = QuizesDataGridView.SelectedCells[0].OwningRow;
             string quizName = (string)selectedRow.Cells[0].Value;
             return quizName;
+        }
+
+        private void TeacherQuizesOverviewScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

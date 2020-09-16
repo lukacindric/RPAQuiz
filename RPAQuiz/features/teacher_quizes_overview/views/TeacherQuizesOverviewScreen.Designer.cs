@@ -89,6 +89,7 @@
             this.Controls.Add(this.BtnCreateQuiz);
             this.Controls.Add(this.QuizesDataGridView);
             this.Name = "TeacherQuizesOverviewScreen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TeacherQuizesOverviewScreen_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.QuizesDataGridView)).EndInit();
             this.ResumeLayout(false);
 

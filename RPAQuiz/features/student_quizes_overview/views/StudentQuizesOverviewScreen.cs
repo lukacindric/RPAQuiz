@@ -1,16 +1,7 @@
 ﻿using RPAQuiz.common;
-using RPAQuiz.data.models;
-using RPAQuiz.data.repositories;
 using RPAQuiz.features.student_quizes_overview.controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RPAQuiz.features.student_quizes_overview.views
@@ -20,14 +11,16 @@ namespace RPAQuiz.features.student_quizes_overview.views
 
         public override BaseController Controller
         {
-            get { return new StudentQuizesOverviewController(this); }
+            get { return new StudentQuizesOverviewController(this,userId); }
         }
 
         private readonly StudentQuizesOverviewController controller;
+        private int userId;
 
-        public StudentQuizesOverviewScreen(): base()
+        public StudentQuizesOverviewScreen(int userId): base()
         {
             InitializeComponent();
+            this.userId = userId;
             this.controller = Controller as StudentQuizesOverviewController;
             SetupUI();
             controller.OnCreate();
@@ -50,6 +43,7 @@ namespace RPAQuiz.features.student_quizes_overview.views
         private void SetupUI()
         {
             SetupQuizesDataGridView();
+            this.Icon = Properties.Resources.efzg_logo;
         }
 
         private void SetupQuizesDataGridView()
@@ -81,6 +75,11 @@ namespace RPAQuiz.features.student_quizes_overview.views
             var selectedRow = QuizesDataGridView.SelectedCells[0].OwningRow;
             string quizName = (string)selectedRow.Cells[0].Value;
             return quizName;
+        }
+
+        private void StudentQuizesOverviewScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

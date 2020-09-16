@@ -74,9 +74,10 @@ namespace RPAQuiz.features.student_take_quiz.controllers
             }
         }
 
-        public void OnSubmitAnswersButtonClicked()
+        public void OnSubmitAnswersButtonClicked(int indexOfUserSelectedAnswer)
         {
-           var didInsert = QuizRepository.Instance.InsertUserAnswersForQuiz(viewModels, userId, quizId);
+            viewModels[currentQuestionIndex].UserAnswer = viewModels[currentQuestionIndex].Answers[indexOfUserSelectedAnswer];
+            var didInsert = QuizRepository.Instance.InsertUserAnswersForQuiz(viewModels, userId, quizId);
            if (didInsert)
             {
                 View.ShowMessage(resourceManager.GetString(StringKeys.StudentTakeQuizInsertAnswersSuccessMessage));

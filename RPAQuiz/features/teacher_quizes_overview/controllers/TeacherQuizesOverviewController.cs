@@ -7,13 +7,9 @@ using RPAQuiz.features.teacher_create_quiz.views;
 using RPAQuiz.features.teacher_edit_quiz.views;
 using RPAQuiz.features.teacher_quiz_result.views;
 using RPAQuiz.features.teacher_quizes_overview.views;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RPAQuiz.features.teacher_quizes_overview.controllers
 {

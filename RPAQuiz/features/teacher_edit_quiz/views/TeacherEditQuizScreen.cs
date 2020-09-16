@@ -28,6 +28,7 @@ namespace RPAQuiz.features.teacher_edit_quiz.views
             this.quizName = quizName;
             this.quizUpdatedDelegate = quizUpdatedDelegate;
             this.controller = Controller as EditQuizController;
+            this.Icon = Properties.Resources.efzg_logo;
             TxtInputQuizName.Text = quizName;
             controller.OnCreate();
         }

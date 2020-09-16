@@ -28,6 +28,7 @@ namespace RPAQuiz.features.student_quiz_result.views
             this.controller = Controller as StudentQuizResultController;
             controller.OnCreate(userId,quizId);
             this.Text = formName;
+            this.Icon = Properties.Resources.efzg_logo;
         }
 
         public override void ShowMessage(string message)

@@ -22,6 +22,7 @@ namespace RPAQuiz.features.student_take_quiz.views
             this.controller = Controller as StudentTakeQuizController;
             controller.OnCreate(userId, quizId, quizTakenDelegate);
             this.Text = quizName;
+            this.Icon = Properties.Resources.efzg_logo;
         }
 
         public override void ShowMessage(string message)
@@ -70,7 +71,7 @@ namespace RPAQuiz.features.student_take_quiz.views
 
         private void BtnSubmitQuiz_Click(object sender, EventArgs e)
         {
-            controller.OnSubmitAnswersButtonClicked();
+            controller.OnSubmitAnswersButtonClicked(GetIndexOfSelectedAnswer());
         }
 
         //utils

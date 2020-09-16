@@ -37,6 +37,7 @@ namespace RPAQuiz.features.sign_in.views
         private void SetupUI()
         {
             SetupLanguageComboBox();
+            this.Icon = Properties.Resources.efzg_logo;
         }
 
         private void SetupLanguageComboBox()

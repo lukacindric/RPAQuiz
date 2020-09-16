@@ -56,6 +56,7 @@ namespace RPAQuiz.features.teacher_quiz_result.views
         {
             SetupQuizesDataGridView();
             this.Text = quizName;
+            this.Icon = Properties.Resources.efzg_logo;
         }
 
         private void SetupQuizesDataGridView()

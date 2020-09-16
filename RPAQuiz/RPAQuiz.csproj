@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>common\efzg_logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -274,8 +277,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="features\teacher_quizes_overview\viewmodels\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="common\efzg_logo.ico" />
     <Content Include="data\database\RPADatabase.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

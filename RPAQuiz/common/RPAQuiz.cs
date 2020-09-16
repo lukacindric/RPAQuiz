@@ -24,9 +24,7 @@ namespace RPAQuiz
             Application.SetCompatibleTextRenderingDefault(false);
             SetLanguage(LanguageCodes.Croatian);
             MessageBoxManager.Register();
-            //Application.Run(new SignIn(LanguageCodes.Croatian));
-            //Application.Run(new StudentQuizesOverviewScreen());
-            Application.Run(new TeacherQuizesOverviewScreen());
+            Application.Run(new SignIn(LanguageCodes.Croatian));
         }
 
        public static void SetLanguage(string languageCode)

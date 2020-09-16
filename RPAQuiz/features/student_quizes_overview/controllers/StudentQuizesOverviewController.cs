@@ -7,13 +7,10 @@ using RPAQuiz.features.student_quiz_result.views;
 using RPAQuiz.features.student_quizes_overview.view_models;
 using RPAQuiz.features.student_quizes_overview.views;
 using RPAQuiz.features.student_take_quiz.views;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RPAQuiz.features.student_quizes_overview.controllers
 {
@@ -25,8 +22,11 @@ namespace RPAQuiz.features.student_quizes_overview.controllers
 
         private readonly ResourceManager resourceManager = new ResourceManager(typeof(StudentQuizesOverviewScreen));
 
-        public StudentQuizesOverviewController(StudentQuizesOverviewScreen view) : base(view)
+        private int userId;
+
+        public StudentQuizesOverviewController(StudentQuizesOverviewScreen view, int userId) : base(view)
         {
+            this.userId = userId;
             this.View = view;
         }
 
@@ -53,7 +53,7 @@ namespace RPAQuiz.features.student_quizes_overview.controllers
         public void OnUserClickedViewQuizResultsButton(int quizId, string quizName)
         {
            if (viewModels.Any(vM=> vM.QuizId == quizId)){
-                var form = new StudentQuizResultScreen(1,quizId, viewModels.Where(vM => vM.QuizId == quizId).ToList()[0].QuizName);
+                var form = new StudentQuizResultScreen(userId,quizId, viewModels.Where(vM => vM.QuizId == quizId).ToList()[0].QuizName);
                 form.Show();
             } else
             {
@@ -70,7 +70,7 @@ namespace RPAQuiz.features.student_quizes_overview.controllers
             else
             {
                 View.Hide();
-                var form = new StudentTakeQuizScreen(1, quizId, quizName, this);
+                var form = new StudentTakeQuizScreen(userId, quizId, quizName, this);
                 form.Show();
             }
         }

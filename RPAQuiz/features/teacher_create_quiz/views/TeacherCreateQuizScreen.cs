@@ -31,6 +31,7 @@ namespace RPAQuiz.features.teacher_create_quiz.views
             InitializeComponent();
             this.quizCreatedDelegate = quizCreatedDelegate;
             this.controller = Controller as TeacherCreateQuizController;
+            this.Icon = Properties.Resources.efzg_logo;
         }
 
         public override void ShowMessage(string message)
