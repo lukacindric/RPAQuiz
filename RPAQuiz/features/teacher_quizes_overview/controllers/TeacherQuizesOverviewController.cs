@@ -4,6 +4,7 @@ using RPAQuiz.common.delegates;
 using RPAQuiz.data.models;
 using RPAQuiz.data.repositories;
 using RPAQuiz.features.teacher_create_quiz.views;
+using RPAQuiz.features.teacher_edit_quiz.views;
 using RPAQuiz.features.teacher_quiz_result.views;
 using RPAQuiz.features.teacher_quizes_overview.views;
 using System;
@@ -56,7 +57,8 @@ namespace RPAQuiz.features.teacher_quizes_overview.controllers
 
         public void OnUserClickedEditQuizButton(int quizId, string quizName)
         {
-
+            var form = new TeacherEditQuizScreen(quizId, quizName);
+            form.Show();
         }
 
         public void OnUserClickedDeleteQuizButton()

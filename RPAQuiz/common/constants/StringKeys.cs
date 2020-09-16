@@ -42,6 +42,11 @@ namespace RPAQuiz.common.constants
         public const string TeacherCreateQuizSuccessMessage = "SuccessMessage";
         public const string TeacherCreateQuizErrorMessage = "ErrorMessage";
 
+        // TeacherEditQuiz screen
+        public const string TeacherEditQuizInputFieldsWarning = "InputFieldsWarning";
+        public const string TeacherEditQuizSuccessMessage = "SuccessMessage";
+        public const string TeacherEditQuizErrorMessage = "ErrorMessage";
+
 
     }
 }

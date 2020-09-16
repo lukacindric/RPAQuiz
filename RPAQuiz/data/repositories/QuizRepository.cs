@@ -3,6 +3,7 @@ using RPAQuiz.data.models;
 using RPAQuiz.features.student_quizes_overview.view_models;
 using RPAQuiz.features.student_take_quiz.viewmodels;
 using RPAQuiz.features.teacher_create_quiz.viewmodels;
+using RPAQuiz.features.teacher_edit_quiz.viewmodels;
 using RPAQuiz.features.teacher_quiz_result.viewmodels;
 using System;
 using System.Collections.Generic;
@@ -110,6 +111,19 @@ namespace RPAQuiz.data.repositories
                     wrongAnswers = wrongAnswersDictionary[userPair.Key];
                 var viewModel = new TeacherQuizResultTableViewModel(userPair.Key, userPair.Value, correctAnswers + "/" + (correctAnswers + wrongAnswers));
                 viewModels.Add(viewModel);
+            }
+            return viewModels;
+        }
+
+        public List<TeacherEditQuizViewmodel> GetQuizDetails(int quizId)
+        {
+            var viewModels = new List<TeacherEditQuizViewmodel>();
+            var questionsInQuiz = QuestionRepository.Instance.GetQuestionsForQuiz(quizId);
+            var answersInQuiz = AnswerRepository.Instance.GetAnswersInQuiz(questionsInQuiz);
+            foreach (Question question in questionsInQuiz)
+            {
+                var answers = answersInQuiz.Where(a => a.QuestionId == question.Id).ToList();
+                viewModels.Add(new TeacherEditQuizViewmodel(question, answers, false,false));
             }
             return viewModels;
         }

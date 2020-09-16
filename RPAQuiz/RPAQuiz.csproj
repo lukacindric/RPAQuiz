@@ -123,6 +123,14 @@
     <Compile Include="features\teacher_create_quiz\views\TeacherCreateQuizScreen.Designer.cs">
       <DependentUpon>TeacherCreateQuizScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="features\teacher_edit_quiz\controllers\EditQuizController.cs" />
+    <Compile Include="features\teacher_edit_quiz\viewmodels\TeacherEditQuizViewmodel.cs" />
+    <Compile Include="features\teacher_edit_quiz\views\TeacherEditQuizScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="features\teacher_edit_quiz\views\TeacherEditQuizScreen.Designer.cs">
+      <DependentUpon>TeacherEditQuizScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="features\teacher_quizes_overview\controllers\TeacherQuizesOverviewController.cs" />
     <Compile Include="features\teacher_quizes_overview\views\TeacherQuizesOverviewScreen.cs">
       <SubType>Form</SubType>
@@ -188,6 +196,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="features\teacher_create_quiz\views\TeacherCreateQuizScreen.resx">
       <DependentUpon>TeacherCreateQuizScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\teacher_edit_quiz\views\TeacherEditQuizScreen.en.resx">
+      <DependentUpon>TeacherEditQuizScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\teacher_edit_quiz\views\TeacherEditQuizScreen.hr.resx">
+      <DependentUpon>TeacherEditQuizScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="features\teacher_edit_quiz\views\TeacherEditQuizScreen.resx">
+      <DependentUpon>TeacherEditQuizScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="features\teacher_quizes_overview\views\TeacherQuizesOverviewScreen.en.resx">
       <DependentUpon>TeacherQuizesOverviewScreen.cs</DependentUpon>
