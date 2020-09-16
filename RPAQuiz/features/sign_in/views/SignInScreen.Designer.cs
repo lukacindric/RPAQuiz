@@ -36,6 +36,8 @@
             this.TxtPassword = new System.Windows.Forms.TextBox();
             this.BtnSignIn = new System.Windows.Forms.Button();
             this.CboLanguage = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LblTitle
@@ -84,10 +86,18 @@
             this.CboLanguage.Name = "CboLanguage";
             this.CboLanguage.DropDownClosed += new System.EventHandler(this.CboLanguage_DropDownClosed);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RPAQuiz.Properties.Resources.efzg_logo_bmp;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
             // SignIn
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CboLanguage);
             this.Controls.Add(this.BtnSignIn);
             this.Controls.Add(this.TxtPassword);
@@ -97,6 +107,7 @@
             this.Controls.Add(this.LblTitle);
             this.Name = "SignIn";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SignIn_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +122,6 @@
         private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.Button BtnSignIn;
         private System.Windows.Forms.ComboBox CboLanguage;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

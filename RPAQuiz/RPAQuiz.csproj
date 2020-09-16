@@ -277,7 +277,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="features\teacher_quizes_overview\viewmodels\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="common\efzg_logo.ico" />
@@ -288,6 +287,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>RPADatabase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\efzg_logo_bmp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
