@@ -40,5 +40,15 @@ namespace RPAQuiz.common.constants
         
         //delete
         public const string DeleteQuiz = "DELETE FROM Quizes WHERE Id =" + SQLParameters.QuizId;
+
+        public const string DeleteQuestion = "DELETE FROM Questions WHERE Id =" + SQLParameters.QuestionId;
+
+        //update
+        public const string UpdateQuizName = "UPDATE Quizes SET Name =" + SQLParameters.QuizName + " WHERE Id = " + SQLParameters.QuizId;
+
+        public const string UpdateQuestionText = "UPDATE Questions SET Text =" + SQLParameters.QuestionText + " WHERE Id = " + SQLParameters.QuestionId;
+
+        public const string UpdateAnswer = "UPDATE Answers SET Text =" + SQLParameters.AnswerText + ", IsCorrectAnswer=" + SQLParameters.AnswerIsCorrectAnswer
+            + " WHERE Id = " + SQLParameters.AnswerId;
     }
 }

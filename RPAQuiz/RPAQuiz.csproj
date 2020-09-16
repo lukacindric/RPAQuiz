@@ -73,6 +73,7 @@
     <Compile Include="common\constants\StringKeys.cs" />
     <Compile Include="common\delegates\QuizCreatedDelegate.cs" />
     <Compile Include="common\delegates\QuizTakenDelegate.cs" />
+    <Compile Include="common\delegates\QuizUpdatedDelegate.cs" />
     <Compile Include="common\RPAQuiz.cs" />
     <Compile Include="common\util\MessageBoxManager.cs" />
     <Compile Include="data\models\Answer.cs" />

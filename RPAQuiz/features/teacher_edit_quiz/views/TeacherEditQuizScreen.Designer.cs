@@ -45,7 +45,7 @@
             this.TxtSecondAnswer = new System.Windows.Forms.TextBox();
             this.TxtThirdAnswer = new System.Windows.Forms.TextBox();
             this.TxtFourthAnswer = new System.Windows.Forms.TextBox();
-            this.BtnCreateQuiz = new System.Windows.Forms.Button();
+            this.BtnSaveChanges = new System.Windows.Forms.Button();
             this.BtnDeleteQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -142,12 +142,12 @@
             resources.ApplyResources(this.TxtFourthAnswer, "TxtFourthAnswer");
             this.TxtFourthAnswer.Name = "TxtFourthAnswer";
             // 
-            // BtnCreateQuiz
+            // BtnSaveChanges
             // 
-            resources.ApplyResources(this.BtnCreateQuiz, "BtnCreateQuiz");
-            this.BtnCreateQuiz.Name = "BtnCreateQuiz";
-            this.BtnCreateQuiz.UseVisualStyleBackColor = true;
-            this.BtnCreateQuiz.Click += new System.EventHandler(this.BtnCreateQuiz_Click);
+            resources.ApplyResources(this.BtnSaveChanges, "BtnSaveChanges");
+            this.BtnSaveChanges.Name = "BtnSaveChanges";
+            this.BtnSaveChanges.UseVisualStyleBackColor = true;
+            this.BtnSaveChanges.Click += new System.EventHandler(this.BtnSaveChanges_Click);
             // 
             // BtnDeleteQuestion
             // 
@@ -161,7 +161,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.BtnDeleteQuestion);
-            this.Controls.Add(this.BtnCreateQuiz);
+            this.Controls.Add(this.BtnSaveChanges);
             this.Controls.Add(this.TxtFourthAnswer);
             this.Controls.Add(this.TxtThirdAnswer);
             this.Controls.Add(this.TxtSecondAnswer);
@@ -202,7 +202,7 @@
         private System.Windows.Forms.TextBox TxtSecondAnswer;
         private System.Windows.Forms.TextBox TxtThirdAnswer;
         private System.Windows.Forms.TextBox TxtFourthAnswer;
-        private System.Windows.Forms.Button BtnCreateQuiz;
+        private System.Windows.Forms.Button BtnSaveChanges;
         private System.Windows.Forms.Button BtnDeleteQuestion;
     }
 }

@@ -49,7 +49,7 @@ namespace RPAQuiz.features.teacher_create_quiz.viewmodels
             return "( '" + firstAnswer + "', " + questionId + ", '" + (correctAnswer == 1) + "' ),"
                 + "( '" + secondAnswer + "', " + questionId + ", '" + (correctAnswer == 2) + "' ),"
                 + "( '" + thirdAnswer + "', " + questionId + ", '" + (correctAnswer == 3) + "' ),"
-                + "( '" + fourthAnswer + "', " + questionId + ", '" + (correctAnswer == 1) + "' );";
+                + "( '" + fourthAnswer + "', " + questionId + ", '" + (correctAnswer == 4) + "' );";
         }
 
         public override bool Equals(object obj)

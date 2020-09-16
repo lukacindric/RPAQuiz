@@ -255,5 +255,28 @@ namespace RPAQuiz.data.repositories
             Connection.Close();
             return true;
         }
+
+        //update
+        public bool UpdateQuizName (int quizId, string quizName)
+        {
+            Connection.Open();
+            SqlCommand command = new SqlCommand(SQLQueries.UpdateQuizName, Connection);
+            command.Parameters.Add(SQLParameters.QuizId, System.Data.SqlDbType.Int);
+            command.Parameters[SQLParameters.QuizId].Value = quizId;
+            command.Parameters.Add(SQLParameters.QuizName, System.Data.SqlDbType.NVarChar);
+            command.Parameters[SQLParameters.QuizName].Value = quizName;
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                Connection.Close();
+                return false;
+            }
+            Connection.Close();
+            return true;
+        }
     }
 }

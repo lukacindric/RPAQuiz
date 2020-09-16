@@ -1,6 +1,7 @@
 ﻿using RPAQuiz.common.constants;
 using RPAQuiz.data.models;
 using RPAQuiz.features.teacher_create_quiz.viewmodels;
+using RPAQuiz.features.teacher_edit_quiz.viewmodels;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -92,6 +93,49 @@ namespace RPAQuiz.data.repositories
                 Connection.Close();
                 return false;
             }
+        }
+
+        public bool InsertAnswersForQuestion(int questionId, TeacherEditQuizViewmodel model)
+        {
+            Connection.Open();
+            SqlCommand command = new SqlCommand(SQLQueries.InsertAnswersForQuestion, Connection);
+            command.CommandText = command.CommandText.Replace(SQLParameters.MultipleAnswers, model.GetStringForInsertAnswersToDatabase(questionId));
+            try
+            {
+                command.ExecuteNonQuery();
+                Connection.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                Connection.Close();
+                return false;
+            }
+        }
+
+        //update
+        public bool UpdateAnswer(int answerId, string answerText, bool isCorrectAnswer)
+        {
+            Connection.Open();
+            SqlCommand command = new SqlCommand(SQLQueries.UpdateAnswer, Connection);
+            command.Parameters.Add(SQLParameters.AnswerId, System.Data.SqlDbType.Int);
+            command.Parameters[SQLParameters.AnswerId].Value = answerId;
+            command.Parameters.Add(SQLParameters.AnswerText, System.Data.SqlDbType.NVarChar);
+            command.Parameters[SQLParameters.AnswerText].Value = answerText;
+            command.Parameters.Add(SQLParameters.AnswerIsCorrectAnswer, System.Data.SqlDbType.Bit);
+            command.Parameters[SQLParameters.AnswerIsCorrectAnswer].Value = isCorrectAnswer;
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                Connection.Close();
+                return false;
+            }
+            Connection.Close();
+            return true;
         }
     }
 }

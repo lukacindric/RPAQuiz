@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BtnCreateQuiz.Text" xml:space="preserve">
-    <value>Spremi Promjene</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Uredi Kviz</value>
   </data>
   <data name="BtnDeleteQuestion.Text" xml:space="preserve">
     <value>Izbriši Pitanje</value>
@@ -128,6 +128,9 @@
   </data>
   <data name="BtnPreviousQuestion.Text" xml:space="preserve">
     <value>Prethodno</value>
+  </data>
+  <data name="BtnSaveChanges.Text" xml:space="preserve">
+    <value>Spremi Promjene</value>
   </data>
   <data name="ErrorMessage" xml:space="preserve">
     <value>Došlo je do pogreške!</value>

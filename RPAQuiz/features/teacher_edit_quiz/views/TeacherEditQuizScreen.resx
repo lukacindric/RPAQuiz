@@ -519,28 +519,28 @@
   <data name="&gt;&gt;TxtFourthAnswer.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="BtnCreateQuiz.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BtnSaveChanges.Location" type="System.Drawing.Point, System.Drawing">
     <value>663, 404</value>
   </data>
-  <data name="BtnCreateQuiz.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BtnSaveChanges.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 23</value>
   </data>
-  <data name="BtnCreateQuiz.TabIndex" type="System.Int32, mscorlib">
+  <data name="BtnSaveChanges.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="BtnCreateQuiz.Text" xml:space="preserve">
+  <data name="BtnSaveChanges.Text" xml:space="preserve">
     <value>Spremi promjene</value>
   </data>
-  <data name="&gt;&gt;BtnCreateQuiz.Name" xml:space="preserve">
-    <value>BtnCreateQuiz</value>
+  <data name="&gt;&gt;BtnSaveChanges.Name" xml:space="preserve">
+    <value>BtnSaveChanges</value>
   </data>
-  <data name="&gt;&gt;BtnCreateQuiz.Type" xml:space="preserve">
+  <data name="&gt;&gt;BtnSaveChanges.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BtnCreateQuiz.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnSaveChanges.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;BtnCreateQuiz.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnSaveChanges.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="BtnDeleteQuestion.Location" type="System.Drawing.Point, System.Drawing">
@@ -567,9 +567,9 @@
   <data name="&gt;&gt;BtnDeleteQuestion.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -580,7 +580,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>TeacherEditQuizScreen</value>
+    <value>Uredi Kviz</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>TeacherEditQuizScreen</value>

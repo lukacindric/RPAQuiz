@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BtnCreateQuiz.Text" xml:space="preserve">
-    <value>Save Changes</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Edit Quiz</value>
   </data>
   <data name="BtnDeleteQuestion.Text" xml:space="preserve">
     <value>Delete Question</value>
@@ -128,6 +128,9 @@
   </data>
   <data name="BtnPreviousQuestion.Text" xml:space="preserve">
     <value>Previous</value>
+  </data>
+  <data name="BtnSaveChanges.Text" xml:space="preserve">
+    <value>Save Changes</value>
   </data>
   <data name="ErrorMessage" xml:space="preserve">
     <value>Something went wrong!</value>

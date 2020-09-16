@@ -107,10 +107,10 @@ namespace RPAQuiz.features.teacher_create_quiz.views
 
         private int GetIndexOfSelectedAnswer()
         {
-            var index = 0;
-            if (RbSecondAnswer.Checked) index = 1;
-            if (RbThirdAnswer.Checked) index = 2;
-            if (RbFourthAnswer.Checked) index = 3;
+            var index = 1;
+            if (RbSecondAnswer.Checked) index = 2;
+            if (RbThirdAnswer.Checked) index = 3;
+            if (RbFourthAnswer.Checked) index = 4;
             return index;
         }
     }

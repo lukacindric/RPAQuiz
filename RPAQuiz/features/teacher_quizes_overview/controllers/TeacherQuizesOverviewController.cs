@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace RPAQuiz.features.teacher_quizes_overview.controllers
 {
-    public class TeacherQuizesOverviewController : BaseController, QuizCreatedDelegate
+    public class TeacherQuizesOverviewController : BaseController, QuizCreatedDelegate, QuizUpdatedDelegate
     {
         private readonly TeacherQuizesOverviewScreen View;
 
@@ -57,7 +57,7 @@ namespace RPAQuiz.features.teacher_quizes_overview.controllers
 
         public void OnUserClickedEditQuizButton(int quizId, string quizName)
         {
-            var form = new TeacherEditQuizScreen(quizId, quizName);
+            var form = new TeacherEditQuizScreen(quizId, quizName, this);
             form.Show();
         }
 
@@ -91,6 +91,11 @@ namespace RPAQuiz.features.teacher_quizes_overview.controllers
 
         //delegate
         public void OnQuizCreated()
+        {
+            OnCreate();
+        }
+
+        public void OnQuizUpdated()
         {
             OnCreate();
         }

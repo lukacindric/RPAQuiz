@@ -17,5 +17,9 @@ namespace RPAQuiz.common.constants
         public const string QuestionText = "@QUESTION_TEXT";
         public const string QuestionId = "@QUESTION_ID";
         public const string MultipleAnswers = "@MULTIPLE_ANSWERS";
+        public const string AnswerText = "@ANSWER_TEXT";
+        public const string AnswerId = "@ANSWER_ID";
+        public const string AnswerIsCorrectAnswer = "@ANSWER_IS_CORRECT_ANSWER";
+
     }
 }

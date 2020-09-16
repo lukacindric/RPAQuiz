@@ -95,6 +95,14 @@ namespace RPAQuiz.features.teacher_edit_quiz.viewmodels
             }
         }
 
+        public string GetStringForInsertAnswersToDatabase(int questionId)
+        {
+            return "( '" + answers[0].Text + "', " + questionId + ", '" + answers[0].IsCorrectAnswer + "' ),"
+                + "( '" + answers[1].Text + "', " + questionId + ", '" + answers[1].IsCorrectAnswer + "' ),"
+                + "( '" + answers[2].Text + "', " + questionId + ", '" + answers[2].IsCorrectAnswer + "' ),"
+                + "( '" + answers[3].Text + "', " + questionId + ", '" + answers[3].IsCorrectAnswer + "' );";
+        }
+
         public override bool Equals(object obj)
         {
             return obj is TeacherEditQuizViewmodel viewmodel &&

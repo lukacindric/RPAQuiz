@@ -5,13 +5,6 @@ using RPAQuiz.features.student_quiz_result.controllers;
 using RPAQuiz.features.teacher_create_quiz.controllers;
 using RPAQuiz.features.teacher_edit_quiz.controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RPAQuiz.features.teacher_edit_quiz.views
@@ -20,18 +13,20 @@ namespace RPAQuiz.features.teacher_edit_quiz.views
     {
         public override BaseController Controller
         {
-            get { return new EditQuizController(this, quizId, quizName); }
+            get { return new EditQuizController(this, quizId, quizName, quizUpdatedDelegate); }
         }
 
         private int quizId;
         private string quizName;
+        private QuizUpdatedDelegate quizUpdatedDelegate;
         private readonly EditQuizController controller;
 
-        public TeacherEditQuizScreen(int quizId, string quizName) : base()
+        public TeacherEditQuizScreen(int quizId, string quizName, QuizUpdatedDelegate quizUpdatedDelegate) : base()
         {
             InitializeComponent();
             this.quizId = quizId;
             this.quizName = quizName;
+            this.quizUpdatedDelegate = quizUpdatedDelegate;
             this.controller = Controller as EditQuizController;
             TxtInputQuizName.Text = quizName;
             controller.OnCreate();
@@ -91,13 +86,21 @@ namespace RPAQuiz.features.teacher_edit_quiz.views
                 GetIndexOfSelectedAnswer());
         }
 
-        private void BtnCreateQuiz_Click(object sender, EventArgs e)
-        {
-        }
 
         private void BtnDeleteQuestion_Click(object sender, EventArgs e)
         {
             controller.OnDeleteQuestionButtonClicked();
+        }
+
+        private void BtnSaveChanges_Click(object sender, EventArgs e)
+        {
+            controller.OnSaveChanges(TxtQuestion.Text,
+                TxtFirstAnswer.Text,
+                TxtSecondAnswer.Text,
+                TxtThirdAnswer.Text,
+                TxtFourthAnswer.Text,
+                GetIndexOfSelectedAnswer(),
+                TxtInputQuizName.Text);
         }
 
         //utils
@@ -110,5 +113,6 @@ namespace RPAQuiz.features.teacher_edit_quiz.views
             if (RbFourthAnswer.Checked) index = 4;
             return index;
         }
+
     }
 }

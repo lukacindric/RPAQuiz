@@ -28,12 +28,14 @@ namespace RPAQuiz.features.teacher_edit_quiz.controllers
 
         private string quizName;
 
+        private QuizUpdatedDelegate quizUpdatedDelegate;
 
-        public EditQuizController(TeacherEditQuizScreen view, int quizId, string quizName) : base(view)
+        public EditQuizController(TeacherEditQuizScreen view, int quizId, string quizName, QuizUpdatedDelegate quizUpdatedDelegate) : base(view)
         {
             this.View = view;
             this.quizId = quizId;
             this.quizName = quizName;
+            this.quizUpdatedDelegate = quizUpdatedDelegate;
         }
 
         public void OnCreate()
@@ -144,7 +146,7 @@ namespace RPAQuiz.features.teacher_edit_quiz.controllers
             UpdateUI();
         }
 
-        public void OnEditQuizButtonClicked(string question,
+        public void OnSaveChanges(string question,
             string answer1,
             string answer2,
             string answer3,
@@ -152,13 +154,67 @@ namespace RPAQuiz.features.teacher_edit_quiz.controllers
             int correctAnswer,
             string quizName)
         {
+            if (question.Trim().Length == 0
+               || answer1.Trim().Length == 0
+               || answer2.Trim().Length == 0
+               || answer3.Trim().Length == 0
+               || answer4.Trim().Length == 0)
+            {
+                View.ShowMessage(resourceManager.GetString(StringKeys.TeacherEditQuizInputFieldsWarning));
+                return;
+            }
+            if (viewModels.ElementAtOrDefault(currentQuestionIndex) != null)
+            {
+                viewModels[currentQuestionIndex].SaveChangesIfNeeded(question,
+                answer1,
+                answer2,
+                answer3,
+                answer4,
+                correctAnswer);
+            }
+            else
+            {
+                var viewModel = new TeacherEditQuizViewmodel(question, answer1, answer2, answer3, answer4, correctAnswer);
+                viewModels.Add(viewModel);
+            }
+            
+            if (quizName != this.quizName )
+            {
+                if (!QuizRepository.Instance.UpdateQuizName(quizId, quizName))
+                {
+                    View.ShowMessage(resourceManager.GetString(StringKeys.TeacherEditQuizErrorMessage));
+                    return;
+                }
+            }
 
-        
-        }
+            if (!QuestionRepository.Instance.DeleteQuestionsFromQuizIfNeeded(quizId, viewModels))
+            {
+                View.ShowMessage(resourceManager.GetString(StringKeys.TeacherEditQuizErrorMessage));
+                return;
+            }
 
-        private void InsertQuizToDB(string quizName)
-        {
-           
+            foreach (TeacherEditQuizViewmodel viewModel in viewModels)
+            {
+                if (viewModel.WasAdded)
+                {
+                    if (!QuestionRepository.Instance.InsertQuestionAndAnswers(quizId, viewModel))
+                    {
+                        View.ShowMessage(resourceManager.GetString(StringKeys.TeacherEditQuizErrorMessage));
+                        return;
+                    }
+                }
+                if (viewModel.WasChanged && !viewModel.WasAdded)
+                {
+                    if (!QuestionRepository.Instance.UpdateQuestionAndAnswer(viewModel))
+                    {
+                        View.ShowMessage(resourceManager.GetString(StringKeys.TeacherEditQuizErrorMessage));
+                        return;
+                    }
+                }
+            }
+            View.ShowMessage(resourceManager.GetString(StringKeys.TeacherEditQuizSuccessMessage));
+            quizUpdatedDelegate.OnQuizUpdated();
+            View.Close();
         }
     }
 }
