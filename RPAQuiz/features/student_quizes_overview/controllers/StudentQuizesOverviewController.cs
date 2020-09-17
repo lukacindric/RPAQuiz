@@ -36,7 +36,7 @@ namespace RPAQuiz.features.student_quizes_overview.controllers
             resourceManager.GetString(StringKeys.StudentQUizesOverviewTableHeaderMyResultKey),"Quiz_Id"};
             var dataTable = SetColumnsHeaderName(columnHeaders);
             var quizes = QuizRepository.Instance.GetQuizes();
-            viewModels = QuizRepository.Instance.GetQuizesViewModelsForQuizesOverview(1);
+            viewModels = QuizRepository.Instance.GetQuizesViewModelsForQuizesOverview(userId);
             foreach (Quiz quiz in quizes)
             {
                 var result = resourceManager.GetString(StringKeys.StudentQuizesOverviewTableNoResultKey);

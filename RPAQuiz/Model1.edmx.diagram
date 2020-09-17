@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e7bcd9c003c84a96a5c10a1115925077" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="RPADatabaseModel.Answer" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPADatabaseModel.Question" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPADatabaseModel.Quiz" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPADatabaseModel.QuizQuestion" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPADatabaseModel.UserAnswer" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPADatabaseModel.User" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="RPADatabaseModel.FK_Answers_To_Questions" ManuallyRouted="false" />
+        <AssociationConnector Association="RPADatabaseModel.FK_UserAnswers_To_Answers" ManuallyRouted="false" />
+        <AssociationConnector Association="RPADatabaseModel.FK_QuizQuestions_To_Questions" ManuallyRouted="false" />
+        <AssociationConnector Association="RPADatabaseModel.FK_UserAnswers_To_Questions" ManuallyRouted="false" />
+        <AssociationConnector Association="RPADatabaseModel.FK_QuizQuestions_To_Quizes" ManuallyRouted="false" />
+        <AssociationConnector Association="RPADatabaseModel.FK_UserAnswers_To_Quizes" ManuallyRouted="false" />
+        <AssociationConnector Association="RPADatabaseModel.FK_UserAnswers_To_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
